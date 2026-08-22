@@ -1,0 +1,1765 @@
+import type { LogoKey } from "@/components/icons/TechIcons";
+
+export const site = {
+  name: "Karsient",
+  legalName: "Karsient Private Limited",
+  tagline: "Engineering tomorrow's intelligent enterprises",
+  subTagline: "Engineering Tomorrow's Intelligent Enterprises",
+  domain: "karsient.com",
+  url: "https://karsient.com",
+  email: "contact@karsient.com",
+  phone: "+91 76048 89603",
+  phoneRaw: "917604889603",
+  address: "21/114, Sammattipuram Main Road, Madurai, Tamil Nadu 625016, India",
+  hubs: ["Technology & Innovation Hub \u2014 Bangalore", "Chennai, India"],
+  linkedin: "https://www.linkedin.com/company/karsient",
+};
+
+export const navLinks = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/industries", label: "Industries" },
+  { href: "/careers", label: "Careers" },
+  { href: "/contact", label: "Contact" },
+];
+
+export const resourceLinks = [
+  { href: "/insights", label: "Insights" },
+  { href: "/case-studies", label: "Case Studies" },
+  { href: "/blog", label: "Blog" },
+];
+
+export const technologyPlatformNames = [
+  "Databricks",
+  "Microsoft Fabric",
+  "Microsoft Azure",
+  "AWS",
+  "Snowflake",
+  "Apache Spark",
+  "Apache Kafka",
+  "dbt",
+  "Power BI",
+];
+
+export type Service = {
+  slug: string;
+  name: string;
+  short: string;
+  description: string;
+  capabilities: string[];
+  logos: LogoKey[];
+  tech: string[];
+};
+
+export const services: Service[] = [
+  {
+    slug: "ai-generative-ai",
+    name: "AI & Generative AI",
+    short: "Enterprise AI solutions, copilots, RAG, and intelligent automation.",
+    description:
+      "From predictive models to generative AI copilots, we take use cases from proof of concept to production, with monitoring and guardrails built in from the start.",
+    capabilities: [
+      "LLM & generative AI applications",
+      "Retrieval-augmented generation (RAG)",
+      "Copilots & intelligent automation",
+      "Model monitoring & evaluation",
+    ],
+    logos: ["ai"],
+    tech: ["GPT", "Claude", "RAG", "LangChain"],
+  },
+  {
+    slug: "data-engineering",
+    name: "Data Engineering",
+    short: "Modern data lakes, ETL/ELT pipelines, Databricks and Spark.",
+    description:
+      "We build batch and streaming pipelines engineered for scale, observability, and low maintenance overhead — so your teams trust the numbers on day one.",
+    capabilities: [
+      "Lakehouse & ETL/ELT pipeline design",
+      "Databricks & Apache Spark delivery",
+      "Data quality & observability",
+      "Schema & contract management",
+    ],
+    logos: ["databricks", "spark"],
+    tech: ["Databricks", "Apache Spark"],
+  },
+  {
+    slug: "cloud-modernization",
+    name: "Cloud Modernization",
+    short: "Azure, AWS and hybrid cloud migration with secure architectures.",
+    description:
+      "We plan and execute migrations to Azure and AWS with minimal downtime, clear cost modelling, and secure, well-architected landing zones.",
+    capabilities: [
+      "Migration assessment & roadmap",
+      "Secure, well-architected landing zones",
+      "Cost modelling & FinOps",
+      "Post-migration validation",
+    ],
+    logos: ["azure", "aws"],
+    tech: ["Microsoft Azure", "AWS"],
+  },
+  {
+    slug: "analytics-bi",
+    name: "Analytics & BI",
+    short: "Power BI dashboards, semantic models and executive reporting.",
+    description:
+      "We deliver BI ecosystems — from semantic models to executive dashboards — that give every team a single, governed way to answer their own questions.",
+    capabilities: [
+      "Executive & operational dashboards",
+      "Self-serve semantic models",
+      "Power BI & Microsoft Fabric delivery",
+      "Adoption & enablement training",
+    ],
+    logos: ["powerbi", "fabric"],
+    tech: ["Power BI", "Microsoft Fabric"],
+  },
+  {
+    slug: "data-platform",
+    name: "Data Platform",
+    short: "Lakehouse architecture, governance and scalable platforms.",
+    description:
+      "We design governed, scalable data platforms on Snowflake and dbt — unifying transformation, quality, and access control in one operating model.",
+    capabilities: [
+      "Lakehouse & warehouse architecture",
+      "Transformation pipelines with dbt",
+      "Cataloguing, lineage & governance",
+      "Scalable, cost-tuned platforms",
+    ],
+    logos: ["snowflake", "dbt"],
+    tech: ["Snowflake", "dbt"],
+  },
+  {
+    slug: "managed-services",
+    name: "Managed Services",
+    short: "24×7 monitoring, optimization and enterprise support.",
+    description:
+      "An ongoing partnership where we monitor, support, and evolve your data platform — so your internal team can focus on the roadmap, not the pager.",
+    capabilities: [
+      "24/7 platform monitoring & support",
+      "SLA-backed incident response",
+      "Continuous cost & performance tuning",
+      "Quarterly roadmap reviews",
+    ],
+    logos: ["azuremonitor", "databricks", "cloudops"],
+    tech: ["Azure Monitor", "Databricks", "Cloud Operations"],
+  },
+];
+
+export const platformLogos: LogoKey[] = [
+  "databricks",
+  "azure",
+  "aws",
+  "snowflake",
+  "spark",
+  "kafka",
+  "dbt",
+  "powerbi",
+  "python",
+  "sql",
+  "deltalake",
+  "unitycatalog",
+  "airflow",
+  "langchain",
+  "sap",
+  "salesforce",
+  "mongodb",
+  "terraform",
+];
+
+export type PlatformCapability = {
+  icon: LogoKey;
+  emoji: string;
+  title: string;
+  items: LogoKey[];
+};
+
+export const platformCapabilities: PlatformCapability[] = [
+  {
+    icon: "databricks",
+    emoji: "\ud83c\udfd7\ufe0f",
+    title: "Data Engineering",
+    items: ["databricks", "spark", "deltalake"],
+  },
+  {
+    icon: "azure",
+    emoji: "\u2601\ufe0f",
+    title: "Cloud",
+    items: ["azure", "aws", "terraform"],
+  },
+  {
+    icon: "ai",
+    emoji: "\ud83e\udd16",
+    title: "AI",
+    items: ["openai", "claude", "vectorsearch"],
+  },
+  {
+    icon: "powerbi",
+    emoji: "\ud83d\udcca",
+    title: "Analytics",
+    items: ["powerbi", "sql", "semanticmodel"],
+  },
+];
+
+export type IndustryArchitectureLayer = { label: string; items: string[] };
+
+export type Industry = {
+  slug: string;
+  name: string;
+  description: string;
+  useCases: string[];
+  challenge: string;
+  transformation: string;
+  benefits: string[];
+  stats: { label: string; value: string }[];
+  innovation: string;
+  clientsSupported: string;
+  successRate: string;
+  problemSolved: string;
+  architecture: IndustryArchitectureLayer[];
+};
+
+export const industries: Industry[] = [
+  {
+    slug: "insurance",
+    name: "Insurance",
+    description:
+      "Modernising claims, underwriting, and risk data so decisions move at the speed of the customer.",
+    useCases: ["Claims fraud detection", "Underwriting risk models", "Policyholder 360 platforms"],
+    challenge:
+      "A mid-market insurer's fraud signals were scattered across claims, policy, and third-party data sources. Scoring ran in an overnight batch, so fraud was often flagged only after a claim had already been paid out.",
+    transformation:
+      "Karsient consolidated claims, policy, and external risk-signal data onto a governed Databricks Lakehouse, then built a real-time scoring pipeline that evaluates every claim at intake instead of after the fact — with investigator feedback written back to retrain the model on a schedule.",
+    benefits: [
+      "Fraud scoring at claim intake, not after payout",
+      "One governed view of claims, policy, and risk data",
+      "A reusable feature store now powering additional risk models",
+      "Investigator time redirected from data assembly to actual investigation",
+    ],
+    stats: [
+      { label: "Faster fraud triage", value: "60%" },
+      { label: "Fewer false positives", value: "35%" },
+      { label: "Claims scored in real time", value: "100%" },
+    ],
+    innovation:
+      "The same feature store built for fraud scoring is now being extended into pricing and reserving models — turning a single fraud use case into a reusable risk-data foundation for the wider business.",
+    clientsSupported: "6+ insurers",
+    successRate: "98%",
+    problemSolved:
+      "A mid-market insurer couldn't score fraud until after a claim was already paid. We moved scoring to claim intake, cutting investigation time by 60% within two quarters of go-live.",
+    architecture: [
+      { label: "Sources", items: ["Claims systems", "Policy admin", "Third-party risk data"] },
+      { label: "Ingestion", items: ["CDC from claims DB", "Streaming intake events"] },
+      { label: "Lakehouse", items: ["Delta Lake claims model", "Unity Catalog governance"] },
+      { label: "Analytics & AI", items: ["Real-time fraud scoring", "Investigator dashboards"] },
+    ],
+  },
+  {
+    slug: "healthcare",
+    name: "Healthcare",
+    description:
+      "Secure, compliant data platforms that connect clinical, operational, and payer data.",
+    useCases: ["Patient outcome analytics", "Interoperability pipelines", "Compliance-ready governance"],
+    challenge:
+      "Clinical, operational, and payer data lived in separate systems with inconsistent identifiers, making it difficult to get a longitudinal view of patient outcomes without manual, error-prone reconciliation.",
+    transformation:
+      "Karsient built a governed Lakehouse with a master patient index and interoperability pipelines (HL7/FHIR-aware ingestion), unifying clinical and operational data under role-based access controls aligned to HIPAA and equivalent regional requirements.",
+    benefits: [
+      "A longitudinal patient view across clinical and operational systems",
+      "Interoperability pipelines that reduce manual reconciliation",
+      "Governance and access controls built in from day one",
+      "Faster, more consistent outcome and quality reporting",
+    ],
+    stats: [
+      { label: "Faster outcome reporting", value: "3x" },
+      { label: "Systems unified", value: "8+" },
+      { label: "Compliance-ready", value: "100%" },
+    ],
+    innovation:
+      "The interoperability layer built for reporting is now the foundation for predictive readmission-risk models, extending the same governed data pipeline into a new clinical use case without a platform rebuild.",
+    clientsSupported: "5+ health systems",
+    successRate: "100%",
+    problemSolved:
+      "A regional health network couldn't produce a longitudinal patient view across clinical and operational systems. We built a master patient index and interoperability layer that cut outcome-reporting time threefold.",
+    architecture: [
+      { label: "Sources", items: ["EHR / clinical systems", "Payer & billing systems", "Lab & operational feeds"] },
+      { label: "Ingestion", items: ["HL7/FHIR-aware pipelines", "Master patient index"] },
+      { label: "Lakehouse", items: ["Governed Delta Lake", "Role-based access control"] },
+      { label: "Analytics & AI", items: ["Outcome analytics", "Readmission-risk models"] },
+    ],
+  },
+  {
+    slug: "banking-financial-services",
+    name: "Banking & Financial Services",
+    description:
+      "Real-time, governed data for risk, compliance, and personalised financial products.",
+    useCases: ["Real-time fraud monitoring", "Regulatory reporting automation", "Credit risk modelling"],
+    challenge:
+      "A regional bank assembled its regulatory figures manually across spreadsheets every reporting cycle, with no consistent lineage from source transaction to reported number and no automated reconciliation.",
+    transformation:
+      "Karsient designed a governed reporting warehouse with full source-to-report lineage, replacing manual spreadsheet assembly with automated, auditable pipelines aligned to the bank's regulatory calendar and sign-off process.",
+    benefits: [
+      "Full, auditable lineage for every regulatory figure",
+      "Automated reconciliation replacing manual sign-off spreadsheets",
+      "A reporting cycle measured in hours, not days",
+      "Faster, better-documented audit responses",
+    ],
+    stats: [
+      { label: "Reporting cycle", value: "5d \u2192 6h" },
+      { label: "Manual reconciliation steps", value: "0" },
+      { label: "Figures with full lineage", value: "100%" },
+    ],
+    innovation:
+      "The lineage framework built for regulatory reporting is now being reused to accelerate new-product risk sign-off, cutting the time to bring new financial products to market.",
+    clientsSupported: "8+ banks & FIs",
+    successRate: "97%",
+    problemSolved:
+      "A regional bank spent nearly a full week each quarter manually assembling regulatory figures with no lineage. We built an automated, auditable pipeline that cut the reporting cycle to under a day.",
+    architecture: [
+      { label: "Sources", items: ["Core banking system", "General ledger", "Transaction feeds"] },
+      { label: "Ingestion", items: ["Governed batch & CDC ingestion", "Source-to-report lineage"] },
+      { label: "Lakehouse", items: ["Delta Lake reporting warehouse", "Automated reconciliation"] },
+      { label: "Analytics & AI", items: ["Regulatory reporting", "Credit risk models"] },
+    ],
+  },
+  {
+    slug: "retail",
+    name: "Retail",
+    description:
+      "Unified customer and inventory data that powers personalisation and demand planning.",
+    useCases: ["Demand forecasting", "Customer 360 & personalisation", "Inventory optimisation"],
+    challenge:
+      "Store-level demand forecasts relied on spreadsheets and static rules. POS, promotional, and weather data lived in separate systems with no shared model, and forecast refreshes took days — too slow to react to demand shifts.",
+    transformation:
+      "Karsient built a unified demand-signal pipeline blending POS transactions, promotional calendars, and weather data into a single feature set on Databricks, replacing spreadsheet-driven planning with an automated, governed model refreshed daily.",
+    benefits: [
+      "One consistent demand model instead of per-region spreadsheets",
+      "Daily forecast refresh instead of a days-long manual cycle",
+      "Planner time redirected from data assembly to exceptions",
+      "A shared feature store reused across planning teams",
+    ],
+    stats: [
+      { label: "Fewer stockouts", value: "22%" },
+      { label: "Forecast refresh time", value: "Days \u2192 Hours" },
+      { label: "Stores on one model", value: "200+" },
+    ],
+    innovation:
+      "The same demand-signal pipeline is now being extended into dynamic pricing pilots, reusing the feature store built for forecasting rather than starting a new data project from scratch.",
+    clientsSupported: "10+ retail brands",
+    successRate: "96%",
+    problemSolved:
+      "A multi-region retailer ran demand forecasting on spreadsheets refreshed days apart. We unified POS, promotional, and weather data into one daily-refreshed model, cutting stockouts by 22%.",
+    architecture: [
+      { label: "Sources", items: ["POS transactions", "Promotional calendars", "Weather feeds"] },
+      { label: "Ingestion", items: ["Daily batch pipelines", "Streaming POS events"] },
+      { label: "Lakehouse", items: ["Unified demand-signal model", "Governed feature store"] },
+      { label: "Analytics & AI", items: ["Demand forecasting", "Customer 360 & personalisation"] },
+    ],
+  },
+  {
+    slug: "manufacturing",
+    name: "Manufacturing",
+    description:
+      "Connecting shop-floor sensors to enterprise systems for predictive, data-driven operations.",
+    useCases: ["Predictive maintenance", "Supply chain visibility", "Quality analytics"],
+    challenge:
+      "A global industrial manufacturer ran a different reporting stack per market, with inconsistent KPI definitions and no single source of truth — leadership depended on regional teams to manually assemble a consolidated view.",
+    transformation:
+      "Karsient consolidated on-prem and cloud source systems from 10+ markets into a single governed Lakehouse, standardising KPI logic centrally while preserving market-specific compliance controls, with mobile-enabled, role-based dashboards for every market.",
+    benefits: [
+      "One governed view of performance across 10+ markets",
+      "Standardised KPI definitions replacing market-by-market interpretation",
+      "Automated ingestion replacing manual file handling",
+      "A platform now extended into predictive maintenance and forecasting",
+    ],
+    stats: [
+      { label: "Markets unified", value: "10+" },
+      { label: "Users on role-based dashboards", value: "300+" },
+      { label: "KPI definitions standardised", value: "100%" },
+    ],
+    innovation:
+      "With a single governed data layer in place, the manufacturer is now piloting predictive maintenance models on shop-floor sensor data — a use case that would have required a separate integration project under the old per-market architecture.",
+    clientsSupported: "7+ manufacturers",
+    successRate: "98%",
+    problemSolved:
+      "A global manufacturer had 10+ markets each running their own reporting stack with inconsistent KPIs. We built one governed Lakehouse with standardised KPI logic, giving leadership a single consolidated view for the first time.",
+    architecture: [
+      { label: "Sources", items: ["Shop-floor sensors", "ERP per market", "Manual & legacy files"] },
+      { label: "Ingestion", items: ["Automated multi-market ingestion", "Standardised KPI logic"] },
+      { label: "Lakehouse", items: ["Central governed Lakehouse", "Market-level access isolation"] },
+      { label: "Analytics & AI", items: ["Role-based dashboards", "Predictive maintenance"] },
+    ],
+  },
+  {
+    slug: "agriculture",
+    name: "Agriculture",
+    description:
+      "Data platforms that turn field, weather, and yield data into operational decisions.",
+    useCases: ["Yield prediction models", "Precision farming analytics", "Supply chain traceability"],
+    challenge:
+      "Field sensor data, weather feeds, and yield records were captured in disconnected systems, making it hard to correlate conditions with outcomes or give growers timely, data-backed recommendations.",
+    transformation:
+      "Karsient built a Lakehouse that ingests field sensor telemetry, weather data, and historical yield records on a common schema, powering yield-prediction models and precision-farming dashboards growers and agronomists can act on in-season.",
+    benefits: [
+      "Field, weather, and yield data unified on one platform",
+      "In-season yield predictions instead of after-the-fact analysis",
+      "Traceability data ready for supply-chain and compliance reporting",
+      "A foundation that scales from a pilot region to the full estate",
+    ],
+    stats: [
+      { label: "Data sources unified", value: "5+" },
+      { label: "Prediction refresh", value: "Daily" },
+      { label: "Traceability coverage", value: "End-to-end" },
+    ],
+    innovation:
+      "The unified telemetry pipeline is now being extended into automated irrigation recommendations, applying the same governed data foundation to a new operational decision without re-integrating source systems.",
+    clientsSupported: "4+ agri-businesses",
+    successRate: "95%",
+    problemSolved:
+      "A large grower had field, weather, and yield data trapped in disconnected systems with no way to correlate conditions to outcomes. We unified them on one platform, enabling in-season yield predictions instead of after-the-fact analysis.",
+    architecture: [
+      { label: "Sources", items: ["Field sensor telemetry", "Weather data feeds", "Historical yield records"] },
+      { label: "Ingestion", items: ["Common-schema ingestion", "Daily refresh pipelines"] },
+      { label: "Lakehouse", items: ["Unified field & yield model", "Traceability data layer"] },
+      { label: "Analytics & AI", items: ["Yield prediction models", "Precision-farming dashboards"] },
+    ],
+  },
+  {
+    slug: "logistics",
+    name: "Logistics",
+    description:
+      "Real-time visibility across fleets, routes, and warehouses to cut cost and delay.",
+    useCases: ["Route & fleet optimisation", "Real-time shipment tracking", "Warehouse analytics"],
+    challenge:
+      "Fleet, route, and warehouse data lived in separate operational systems, so dispatchers and planners lacked a real-time, end-to-end view of shipments — delays were often discovered by customers before they were discovered internally.",
+    transformation:
+      "Karsient built a real-time ingestion pipeline from telematics, warehouse systems, and carrier feeds into a governed Lakehouse, powering live shipment-tracking dashboards and route-optimisation models used by dispatch teams daily.",
+    benefits: [
+      "Real-time, end-to-end shipment visibility",
+      "Route optimisation grounded in live fleet and traffic data",
+      "Warehouse analytics surfacing bottlenecks before they cause delays",
+      "A single data layer shared across dispatch, planning, and customer service",
+    ],
+    stats: [
+      { label: "Shipment visibility", value: "Real-time" },
+      { label: "Data sources unified", value: "6+" },
+      { label: "Dispatch teams onboarded", value: "All" },
+    ],
+    innovation:
+      "The real-time tracking layer is now the foundation for predictive ETA models, giving customers proactive delay notifications instead of reactive status checks.",
+    clientsSupported: "6+ logistics operators",
+    successRate: "97%",
+    problemSolved:
+      "A logistics operator's dispatch team had no real-time, end-to-end view of shipments — delays were discovered by customers first. We built a live tracking pipeline from telematics and warehouse systems that gives dispatch a real-time view today.",
+    architecture: [
+      { label: "Sources", items: ["Fleet telematics", "Warehouse systems", "Carrier feeds"] },
+      { label: "Ingestion", items: ["Real-time streaming ingestion", "Route & fleet events"] },
+      { label: "Lakehouse", items: ["Governed shipment data model", "Unified tracking layer"] },
+      { label: "Analytics & AI", items: ["Live shipment dashboards", "Route optimisation models"] },
+    ],
+  },
+];
+
+export const heroStats = [
+  { label: "Years Experience", value: 11, suffix: "+" },
+  { label: "Projects", value: 40, suffix: "+" },
+  { label: "Delivery Success", value: 99, suffix: "%" },
+  { label: "Global Support", value: 24, suffix: "\u00d77" },
+];
+
+export const metrics = [
+  { label: "Projects delivered", value: 40, suffix: "+" },
+  { label: "Consultants & engineers", value: 25, suffix: "+" },
+  { label: "Client satisfaction", value: 98, suffix: "%" },
+  { label: "Industries served", value: 7, suffix: "" },
+];
+
+export const process = [
+  {
+    step: "Discover",
+    detail: "We map your data landscape, business goals, and constraints before proposing anything.",
+  },
+  {
+    step: "Design",
+    detail: "Architecture and roadmap are designed against your scale, budget, and compliance needs.",
+  },
+  {
+    step: "Build",
+    detail: "Agile delivery in short cycles, with working increments you can see every sprint.",
+  },
+  {
+    step: "Operate",
+    detail: "We hand over with documentation, training, and an optional managed-services partnership.",
+  },
+];
+
+export const whyKarsient = [
+  {
+    title: "Platform-agnostic expertise",
+    detail: "Deep experience across Databricks, AWS, Azure, and GCP — we recommend what fits, not what's familiar.",
+  },
+  {
+    title: "Engineers, not just advisors",
+    detail: "Our consultants write and ship production code alongside your team, not just slide decks.",
+  },
+  {
+    title: "Governance from day one",
+    detail: "Security, lineage, and compliance are built into every architecture, not bolted on later.",
+  },
+  {
+    title: "Outcome-based partnership",
+    detail: "We measure success in decisions enabled and cost removed, not hours billed.",
+  },
+];
+
+export const testimonials = [
+  {
+    quote:
+      "Karsient rebuilt our data platform in months, not years, and our analysts finally trust the numbers.",
+    name: "VP of Data, Enterprise Client",
+    role: "Financial Services",
+  },
+  {
+    quote:
+      "Their team felt like an extension of ours — technically sharp and genuinely invested in the outcome.",
+    name: "Director of Engineering",
+    role: "Retail Client",
+  },
+  {
+    quote:
+      "The governance framework they implemented turned audits from a scramble into a formality.",
+    name: "Head of Compliance",
+    role: "Healthcare Client",
+  },
+];
+
+export const faqs = [
+  {
+    q: "What industries does Karsient work with?",
+    a: "We work primarily with Insurance, Healthcare, Banking & Financial Services, Retail, Manufacturing, Agriculture, and Logistics organisations, from mid-market to Fortune 500 scale.",
+  },
+  {
+    q: "Do you work with our existing cloud provider?",
+    a: "Yes. We are platform-agnostic and work across Databricks, AWS, Azure, and GCP, and will recommend the platform that fits your constraints rather than a single default stack.",
+  },
+  {
+    q: "Can you take over an existing, half-built data platform?",
+    a: "Yes — a large share of our engagements start with an assessment of an existing platform, followed by a phased modernisation plan that preserves what already works.",
+  },
+  {
+    q: "Do you offer ongoing support after a project ends?",
+    a: "Our Managed Data Services team can take on monitoring, incident response, and continuous optimisation once a platform is live, on a retainer basis.",
+  },
+  {
+    q: "How do we get started?",
+    a: "Book a free consultation through our contact page. We typically follow up within one business day to schedule a discovery call.",
+  },
+];
+
+export type CaseStudy = {
+  slug: string;
+  industry: string;
+  title: string;
+  summary: string;
+  results: string[];
+  challenge: string[];
+  approach: string;
+  architecture: string[];
+  migrationStrategy: string;
+  engineeringImprovements: string[];
+  businessImpact: string[];
+  techStack: string[];
+};
+
+export const caseStudies: CaseStudy[] = [
+  {
+    slug: "insurance-claims-fraud",
+    industry: "Insurance",
+    title: "Cutting claims-fraud investigation time by 60%",
+    summary:
+      "A mid-market insurer partnered with Karsient to build a real-time fraud-scoring pipeline on top of a modernised claims data platform.",
+    results: ["60% faster fraud triage", "35% reduction in false positives", "Real-time scoring at claim intake"],
+    challenge: [
+      "Fraud signals scattered across claims, policy, and third-party data sources",
+      "Batch-only scoring meant fraud was often flagged after payout",
+      "Investigation teams relied on manual cross-referencing across systems",
+      "No feedback loop between investigator outcomes and the scoring model",
+    ],
+    approach:
+      "Karsient consolidated claims, policy, and external risk-signal data onto a governed Lakehouse, then built a real-time scoring pipeline that evaluates every claim at intake rather than after the fact.",
+    architecture: [
+      "Streaming ingestion from claims and policy systems via CDC",
+      "Feature pipeline on Delta Lake feeding a real-time scoring endpoint",
+      "Unity Catalog governing access across claims, underwriting, and fraud teams",
+      "Investigator feedback loop written back to retrain the model on a schedule",
+    ],
+    migrationStrategy:
+      "The legacy batch ETL was re-platformed incrementally, workload by workload, running in parallel with the existing nightly process until scoring parity was proven on historical claims.",
+    engineeringImprovements: [
+      "Incremental, CDC-based ingestion replacing nightly batch loads",
+      "Delta Lake feature store shared across scoring and reporting",
+      "Automated data quality checks on every incoming claim",
+      "CI/CD pipeline for model retraining and safe rollout",
+    ],
+    businessImpact: [
+      "Fraud triage time cut by 60%, from days to hours",
+      "False-positive rate reduced by 35%, freeing investigator capacity",
+      "Scoring now happens at claim intake instead of post-payout",
+      "A reusable feature store now powers two additional risk models",
+    ],
+    techStack: ["databricks", "deltalake", "unitycatalog", "kafka", "python"],
+  },
+  {
+    slug: "retail-demand-forecasting",
+    industry: "Retail",
+    title: "Demand forecasting that cut stockouts across 200+ stores",
+    summary:
+      "We built a forecasting platform on Databricks that combined POS, weather, and promotional data into a single demand signal.",
+    results: ["22% fewer stockouts", "Forecast refresh time cut from days to hours", "Unified data model across 200+ stores"],
+    challenge: [
+      "Store-level demand forecasts relied on spreadsheets and static rules",
+      "POS, promotional, and weather data lived in separate systems with no shared model",
+      "Forecast refreshes took days, too slow to react to demand shifts",
+      "No visibility into forecast accuracy by store or category",
+    ],
+    approach:
+      "Karsient built a unified demand-signal pipeline that blends POS transactions, promotional calendars, and external weather data into a single feature set, replacing spreadsheet-driven planning with a governed, automated model.",
+    architecture: [
+      "Batch and near-real-time ingestion from POS and inventory systems",
+      "Bronze/Silver/Gold medallion layers for raw, cleaned, and modelled demand data",
+      "Forecasting models orchestrated on a daily schedule via Databricks Workflows",
+      "Power BI dashboards for store- and category-level forecast accuracy",
+    ],
+    migrationStrategy:
+      "Legacy spreadsheet workflows were replaced store-cluster by store-cluster, with each cluster's new forecast validated against the prior manual process for two full cycles before cutover.",
+    engineeringImprovements: [
+      "Automated daily forecast refresh replacing manual weekly cycles",
+      "A single demand-signal feature store shared across planning teams",
+      "Parallel processing across store clusters cutting refresh time",
+      "Forecast-accuracy monitoring built into the pipeline itself",
+    ],
+    businessImpact: [
+      "22% reduction in stockouts across 200+ stores",
+      "Forecast refresh time cut from days to hours",
+      "One consistent demand model replacing per-region spreadsheets",
+      "Planners now spend time on exceptions, not data assembly",
+    ],
+    techStack: ["databricks", "spark", "deltalake", "powerbi", "python"],
+  },
+  {
+    slug: "banking-regulatory-reporting",
+    industry: "Banking & Financial Services",
+    title: "Automating regulatory reporting for a regional bank",
+    summary:
+      "A governed data warehouse and lineage framework replaced a spreadsheet-driven reporting process prone to manual error.",
+    results: ["Reporting cycle reduced from 5 days to 6 hours", "Full lineage for every regulatory figure", "Zero manual reconciliation steps"],
+    challenge: [
+      "Regulatory figures were assembled manually across spreadsheets each cycle",
+      "No consistent lineage from source transaction to reported figure",
+      "Reconciliation between source systems and reports was fully manual",
+      "Reporting cycles consumed nearly a full working week each quarter",
+    ],
+    approach:
+      "Karsient designed a governed reporting warehouse with full source-to-report lineage, replacing manual spreadsheet assembly with automated, auditable pipelines aligned to the bank's regulatory calendar.",
+    architecture: [
+      "Governed ingestion from core banking and general ledger systems",
+      "A lineage-tracked transformation layer mapping every reported figure to its source",
+      "Automated reconciliation checks between source systems and reporting outputs",
+      "Role-based access aligned to regulatory and audit requirements",
+    ],
+    migrationStrategy:
+      "Reports were migrated one regulatory submission at a time, each run in parallel against the legacy spreadsheet process for a full cycle before the manual process was retired.",
+    engineeringImprovements: [
+      "End-to-end lineage from source transaction to reported figure",
+      "Automated reconciliation replacing manual sign-off spreadsheets",
+      "Scheduled, auditable pipelines aligned to the regulatory calendar",
+      "Version-controlled transformation logic under CI/CD",
+    ],
+    businessImpact: [
+      "Reporting cycle reduced from 5 days to 6 hours",
+      "Full, auditable lineage for every regulatory figure",
+      "Manual reconciliation steps eliminated entirely",
+      "Audit response time shortened with traceable data lineage",
+    ],
+    techStack: ["databricks", "unitycatalog", "sql", "deltalake"],
+  },
+  {
+    slug: "manufacturing-unified-data-platform",
+    industry: "Manufacturing",
+    title: "One data platform across 10+ global markets for an industrial manufacturer",
+    summary:
+      "A global industrial manufacturer needed a single, governed view of performance across markets that had each grown their own reporting, tooling, and definitions.",
+    results: ["10+ markets on one platform", "300+ users on role-based dashboards", "KPI definitions standardised enterprise-wide"],
+    challenge: [
+      "Each market ran its own reporting stack with inconsistent KPI definitions",
+      "Leadership depended on regional teams to manually assemble a consolidated view",
+      "Ad hoc drill-down and trend analysis were effectively impossible",
+      "No single source of truth for sales, demand, and operational metrics across markets",
+    ],
+    approach:
+      "Karsient consolidated on-prem and cloud source systems into a single governed Lakehouse, standardising KPI logic centrally so every market reports against the same definitions while retaining market-specific compliance controls.",
+    architecture: [
+      "Automated ingestion from ERP, CRM, and manual data sources per market",
+      "A central Lakehouse handling transformation, aggregation, and KPI calculation",
+      "Market-level data isolation for security and regulatory compliance",
+      "Mobile-enabled, role-based dashboards for executive and market teams",
+    ],
+    migrationStrategy:
+      "Markets were onboarded in waves, starting with the highest-volume regions, with KPI outputs validated against each market's legacy reports before their local process was decommissioned.",
+    engineeringImprovements: [
+      "Standardised KPI calculation logic shared across all markets",
+      "Automated ingestion and transformation replacing manual file handling",
+      "Role-based access enforcing per-market compliance requirements",
+      "A shared platform now also supporting advanced analytics use cases",
+    ],
+    businessImpact: [
+      "A single, governed view of performance across 10+ markets",
+      "Consolidated dashboards available to 300+ users with role-based access",
+      "Consistent KPI definitions replacing market-by-market interpretation",
+      "Foundation now extended to support advanced analytics and forecasting",
+    ],
+    techStack: ["databricks", "deltalake", "sql", "powerbi", "python"],
+  },
+  {
+    slug: "legacy-etl-modernization",
+    industry: "Technology & Cloud Services",
+    title: "Re-engineering legacy SQL Server ETL into a Databricks-native pipeline",
+    summary:
+      "A global technology and cloud services company needed to move off an on-prem SQL Server ETL estate that could no longer handle its data volumes or processing SLAs.",
+    results: ["~400GB processed daily", "Full pipeline run in under 2 hours", "Materially higher throughput than the legacy estate"],
+    challenge: [
+      "On-prem SQL Server ETL pipelines could not scale to growing data volumes",
+      "Processing windows regularly breached agreed SLAs",
+      "High infrastructure overhead to keep the legacy estate running",
+      "Limited ability to parallelise or scale processing on demand",
+    ],
+    approach:
+      "Karsient re-engineered the SQL-based ETL logic into Databricks-native PySpark and Scala workloads, replacing the legacy processing engine while preserving business logic and output parity.",
+    architecture: [
+      "A hub-and-spoke ingestion pattern feeding a central Lakehouse",
+      "ELT pipelines built on Databricks replacing SQL Server stored-procedure ETL",
+      "Parallelised, distributed processing replacing single-node batch jobs",
+      "Automated validation comparing legacy and new pipeline outputs",
+    ],
+    migrationStrategy:
+      "SQL ETL logic was converted and validated table by table, run alongside the legacy pipeline until outputs matched exactly, before the on-prem jobs were decommissioned.",
+    engineeringImprovements: [
+      "SQL stored procedures converted to distributed PySpark/Scala jobs",
+      "Parallel processing replacing single-threaded legacy execution",
+      "Automated data validation between legacy and modernised outputs",
+      "Reduced infrastructure footprint versus the on-prem estate",
+    ],
+    businessImpact: [
+      "~400GB of data processed reliably on a daily basis",
+      "Full processing pipeline completing in under 2 hours",
+      "Ability to handle substantially larger data volumes than before",
+      "Lower infrastructure overhead versus the legacy on-prem platform",
+    ],
+    techStack: ["databricks", "spark", "python", "sql", "deltalake"],
+  },
+];
+
+/* -------------------------------------------------------------------------- */
+/* Service sub-groups: AI Solutions, MLOps, Databricks Consulting             */
+/* -------------------------------------------------------------------------- */
+
+export type SubService = {
+  slug: string;
+  name: string;
+  short: string;
+  description: string;
+  capabilities: string[];
+  techLogos?: LogoKey[];
+};
+
+export type ServiceGroup = {
+  slug: string;
+  name: string;
+  eyebrow: string;
+  tagline: string;
+  description: string;
+  flow: string[];
+  items: SubService[];
+};
+
+export const aiSolutionsGroup: ServiceGroup = {
+  slug: "ai-solutions",
+  name: "AI Solutions",
+  eyebrow: "AI Solutions",
+  tagline: "From proof of concept to production AI, with guardrails included.",
+  description:
+    "We design, build, and operate enterprise AI applications — generative AI, retrieval, agents, and custom copilots — with the monitoring and governance production systems need.",
+  flow: ["Data & Documents", "Retrieval & LLM", "Guardrails & Evaluation", "Application / Copilot"],
+  items: [
+    {
+      slug: "generative-ai",
+      name: "Generative AI",
+      short: "LLM-powered applications built for enterprise data and workflows.",
+      description:
+        "We build generative AI applications on top of your enterprise data — from document generation to summarisation and content workflows — designed to run reliably in production, not just in a demo.",
+      capabilities: [
+        "Use-case discovery & feasibility scoping",
+        "LLM application architecture & prompt engineering",
+        "Fine-tuning & model selection",
+        "Guardrails, evaluation & responsible-AI review",
+      ],
+      techLogos: ["gpt", "claude", "langchain"],
+    },
+    {
+      slug: "rag-enterprise-knowledge",
+      name: "RAG & Enterprise Knowledge",
+      short: "Ground LLM outputs in your own governed, up-to-date data.",
+      description:
+        "We build retrieval-augmented generation and enterprise search on top of your documents, databases, and knowledge bases — reducing hallucination and keeping answers traceable back to a source.",
+      capabilities: [
+        "Retrieval-Augmented Generation (RAG) pipeline design",
+        "Enterprise search across documents, wikis & databases",
+        "Vector search on Pinecone & MongoDB Atlas Vector Search",
+        "Hybrid search (semantic + keyword) and retrieval tuning",
+        "Citation, freshness & access-control handling",
+      ],
+      techLogos: ["pinecone", "mongodb"],
+    },
+    {
+      slug: "ai-application-development",
+      name: "AI Application Development",
+      short: "Full-stack build of AI-native products and internal tools.",
+      description:
+        "We design and build the full application around your AI capability — front end, APIs, data layer, and deployment pipeline — using frameworks like LangChain to orchestrate LLM applications end to end.",
+      capabilities: [
+        "LangChain-based orchestration & tool chaining",
+        "LLM application engineering, front end to back end",
+        "API & integration layer design",
+        "Deployment, scaling & cost management",
+        "Post-launch iteration & support",
+      ],
+      techLogos: ["langchain", "python"],
+    },
+    {
+      slug: "ai-agents",
+      name: "AI Agents",
+      short: "Multi-step, tool-using agents for real operational workflows.",
+      description:
+        "We design agentic AI systems that plan, remember, and take action across your systems — from single agents with persistent memory to coordinated multi-agent systems — with the observability enterprise workflows require.",
+      capabilities: [
+        "Agentic AI architecture & tool/function design",
+        "Agent memory design for context persistence",
+        "Multi-agent systems & inter-agent coordination",
+        "Human-in-the-loop & approval workflows",
+        "Agent observability & failure handling",
+      ],
+    },
+    {
+      slug: "agentic-ai-workflows",
+      name: "Agentic AI Workflows",
+      short: "Design and orchestrate multi-step agentic workflows end to end.",
+      description:
+        "We design the workflows that agentic AI actually runs on — how a task is broken into steps, how those steps are orchestrated, and how agents call out to your existing tools and APIs.",
+      capabilities: [
+        "Workflow design for multi-step agentic tasks",
+        "Workflow orchestration & state management",
+        "Tool & API integration for agent actions",
+        "Retry, fallback & escalation logic",
+      ],
+    },
+    {
+      slug: "ai-deployment",
+      name: "AI Deployment",
+      short: "Take AI applications and agents safely into production.",
+      description:
+        "We take AI applications and agents from a working prototype into a monitored, governed production system — the same rigor we apply to any other production platform.",
+      capabilities: [
+        "Production deployment for LLM & agentic applications",
+        "AI monitoring for quality, latency & cost",
+        "AI governance, audit trails & policy enforcement",
+        "Staged rollout & rollback for model and prompt changes",
+      ],
+    },
+  ],
+};
+
+export const mlopsGroup: ServiceGroup = {
+  slug: "mlops",
+  name: "MLOps",
+  eyebrow: "MLOps",
+  tagline: "Take machine learning from notebooks to reliable production systems.",
+  description:
+    "We build the platform and pipelines that let your data science team ship models continuously — with monitoring, versioning, and rollback built in rather than assembled after an incident.",
+  flow: ["Data & Features", "Training & Experimentation", "CI/CD & Deployment", "Monitoring & Retraining"],
+  items: [
+    {
+      slug: "mlops-consulting",
+      name: "MLOps Consulting",
+      short: "Assess your ML lifecycle and design a practical operating model.",
+      description:
+        "We assess how models move from experimentation to production today, then design an MLOps operating model — tooling, ownership, and process — matched to your team's maturity.",
+      capabilities: [
+        "ML lifecycle & maturity assessment",
+        "Tooling & platform selection",
+        "Operating model & ownership design",
+        "Roadmap & phased rollout plan",
+      ],
+    },
+    {
+      slug: "ml-platform-engineering",
+      name: "ML Platform Engineering",
+      short: "Build the shared infrastructure your data science team runs on.",
+      description:
+        "We build the shared ML platform — feature stores, training infrastructure, and experiment tracking — so every model doesn't reinvent its own pipeline from scratch.",
+      capabilities: [
+        "Feature store & training pipeline design",
+        "Experiment tracking & reproducibility",
+        "Compute & GPU infrastructure setup",
+        "Self-serve platform for data science teams",
+      ],
+    },
+    {
+      slug: "model-deployment",
+      name: "Model Deployment",
+      short: "Ship models to production with a repeatable, tested pipeline.",
+      description:
+        "We build the deployment pipeline that takes a model from a trained artifact to a served endpoint — batch, real-time, or embedded — with staged rollout and rollback built in.",
+      capabilities: [
+        "Batch, real-time & embedded serving",
+        "CI/CD for model artifacts",
+        "Canary & shadow deployment strategies",
+        "Rollback & version management",
+      ],
+    },
+    {
+      slug: "model-monitoring",
+      name: "Model Monitoring",
+      short: "Catch drift, degradation, and bias before they hit the business.",
+      description:
+        "We instrument production models with monitoring for drift, performance decay, and fairness — with alerting that reaches the right team before a silent failure becomes a business problem.",
+      capabilities: [
+        "Data & concept drift detection",
+        "Performance & business-metric monitoring",
+        "Bias & fairness monitoring",
+        "Alerting & automated retraining triggers",
+      ],
+    },
+    {
+      slug: "ml-cicd",
+      name: "ML CI/CD",
+      short: "Continuous integration and delivery pipelines built for ML.",
+      description:
+        "We extend standard CI/CD with the extra stages ML needs — data validation, model evaluation gates, and artifact registries — so retraining and redeployment are routine, not risky.",
+      capabilities: [
+        "Automated data & model validation gates",
+        "Model registry & artifact versioning",
+        "Pipeline orchestration & scheduling",
+        "Automated retraining workflows",
+      ],
+    },
+  ],
+};
+
+export const dataEngineeringGroup: ServiceGroup = {
+  slug: "data-engineering",
+  name: "Data Engineering",
+  eyebrow: "Data Engineering",
+  tagline: "Modern data engineering across the platforms your enterprise already runs.",
+  description:
+    "We build and modernize the data engineering layer itself — Microsoft Fabric, Snowflake, ERP-sourced pipelines, and the data quality and governance that keeps all of it trustworthy.",
+  flow: ["Source Systems", "Ingestion & Pipelines", "Governed Data Estate", "Analytics & AI"],
+  items: [
+    {
+      slug: "microsoft-fabric",
+      name: "Microsoft Fabric",
+      short: "End-to-end analytics delivery on Microsoft's unified data platform.",
+      description:
+        "We design and build data engineering pipelines, semantic models, and reporting on Microsoft Fabric — for organisations standardising on the Microsoft data stack.",
+      capabilities: [
+        "Fabric Lakehouse & Warehouse architecture",
+        "Data pipeline & Dataflow Gen2 design",
+        "Semantic models for Power BI reporting",
+        "Fabric capacity planning & cost management",
+      ],
+      techLogos: ["fabric", "powerbi"],
+    },
+    {
+      slug: "snowflake",
+      name: "Snowflake",
+      short: "Data engineering delivery for teams standardising on Snowflake.",
+      description:
+        "For organisations running or extending a Snowflake estate, we build ELT pipelines, data models, and governance on Snowflake itself — not every Snowflake engagement is a migration.",
+      capabilities: [
+        "Snowflake data model & warehouse design",
+        "ELT pipeline development & orchestration",
+        "Role-based access & governance setup",
+        "Performance & credit-usage optimisation",
+      ],
+      techLogos: ["snowflake", "dbt"],
+    },
+    {
+      slug: "erp-data-engineering",
+      name: "ERP Data Engineering",
+      short: "Reliable pipelines out of SAP and other enterprise ERP systems.",
+      description:
+        "ERP systems hold the transactional core of the business, but they're rarely built for analytics. We build extraction and transformation pipelines that get ERP data into your analytics estate reliably and on schedule.",
+      capabilities: [
+        "SAP & ERP data extraction pipelines",
+        "Change-data-capture from ERP source tables",
+        "Business-object modelling for finance & operations",
+        "Reconciliation against ERP source-of-truth",
+      ],
+      techLogos: ["sap"],
+    },
+    {
+      slug: "data-quality-governance",
+      name: "Data Quality & Governance",
+      short: "Make the data estate trustworthy, not just accessible.",
+      description:
+        "We implement the data quality checks, cataloguing, and access governance that make a data platform something the business can actually trust — not just query.",
+      capabilities: [
+        "Automated data quality rules & monitoring",
+        "Unity Catalog / catalog & lineage implementation",
+        "Access policy design & role-based governance",
+        "Data contracts between producing & consuming teams",
+      ],
+      techLogos: ["unitycatalog"],
+    },
+  ],
+};
+
+export const databricksConsultingGroup: ServiceGroup = {
+  slug: "databricks-consulting",
+  name: "Databricks Consulting",
+  eyebrow: "Databricks Consulting",
+  tagline: "Build, modernize and optimize your enterprise data and AI platform with Databricks.",
+  description:
+    "We don't simply move workloads — we redesign the platform for Databricks. From first architecture sketch to production cutover and ongoing tuning, our team covers the full Databricks lifecycle.",
+  flow: ["Legacy / Source Systems", "Migration & Architecture", "Databricks Lakehouse", "BI / AI / ML"],
+  items: [
+    {
+      slug: "databricks-migration",
+      name: "Databricks Migration",
+      short: "Migrate legacy data platforms and workloads to Databricks with a structured, low-risk approach.",
+      description:
+        "We migrate data, SQL, pipelines, and security models from legacy platforms — Snowflake, Talend, Vertica, Teradata, Hadoop, and on-prem warehouses — onto the Databricks Lakehouse.",
+      capabilities: [
+        "Assessment, discovery & target architecture",
+        "Data, SQL & pipeline migration",
+        "Validation against source-system baselines",
+        "Low-disruption production cutover",
+      ],
+    },
+    {
+      slug: "databricks-performance-optimization",
+      name: "Databricks Performance Optimization",
+      short: "Reduce workload runtime through architecture, SQL and workload tuning.",
+      description:
+        "We profile slow Spark jobs, expensive SQL, and inefficient Delta layouts, then optimize compute, storage, and query design to bring runtimes down without a platform rebuild.",
+      capabilities: [
+        "Spark job & query plan profiling",
+        "Delta Lake layout & clustering tuning",
+        "Cluster sizing, Photon & autoscaling tuning",
+        "Benchmark-validated performance rollout",
+      ],
+    },
+    {
+      slug: "databricks-cost-optimization",
+      name: "Databricks Cost Optimization",
+      short: "Find and fix the workloads driving unnecessary DBU spend.",
+      description:
+        "We analyse usage, workload, compute, and storage patterns to identify oversized clusters, idle capacity, and inefficient jobs — then implement changes with measured, reported savings.",
+      capabilities: [
+        "DBU usage & workload cost analysis",
+        "Cluster right-sizing & autoscaling policy",
+        "Storage & job-scheduling efficiency",
+        "Ongoing cost governance & chargeback",
+      ],
+    },
+    {
+      slug: "databricks-architecture",
+      name: "Databricks Architecture",
+      short: "Design a secure, scalable Lakehouse architecture from the ground up.",
+      description:
+        "We design medallion architecture, Unity Catalog governance, multi-workspace topology, networking, and CI/CD for teams standing up or re-architecting a Databricks platform.",
+      capabilities: [
+        "Lakehouse & medallion architecture design",
+        "Unity Catalog & governance model",
+        "Multi-workspace & networking topology",
+        "CI/CD, dev/test/prod & DR strategy",
+      ],
+    },
+  ],
+};
+
+export const serviceGroups: ServiceGroup[] = [
+  databricksConsultingGroup,
+  dataEngineeringGroup,
+  aiSolutionsGroup,
+  mlopsGroup,
+];
+
+/* -------------------------------------------------------------------------- */
+/* Solutions: platform-specific migration & deployment pages                  */
+/* -------------------------------------------------------------------------- */
+
+export type MigrationSolution = {
+  slug: string;
+  kind: "migration" | "cloud";
+  source?: string;
+  name: string;
+  short: string;
+  heroSubhead: string;
+  migrates: { title: string; items: string[] }[];
+  challenges: string[];
+  faqs: { q: string; a: string }[];
+  architectureLabel: string;
+  architectureTech: string[];
+};
+
+const standardMethodology = [
+  { step: "Discovery", detail: "Understand business goals, current systems, and constraints before proposing anything." },
+  { step: "Assessment", detail: "Inventory databases, tables, pipelines, workloads, dependencies and usage across the estate." },
+  { step: "Architecture", detail: "Design the target Databricks Lakehouse architecture, Unity Catalog, and governance model." },
+  { step: "Design", detail: "Define detailed technical design — data models, pipeline patterns, and platform standards." },
+  { step: "Migration", detail: "Move data, SQL, transformations and pipelines in planned, testable phases." },
+  { step: "Engineering", detail: "Build and re-engineer pipelines, jobs, and integrations on the target platform." },
+  { step: "Validation", detail: "Compare record counts, aggregations, business rules, data quality and performance against source." },
+  { step: "Optimization", detail: "Tune file sizes, partitioning/clustering, SQL, compute, and Delta table configuration." },
+  { step: "Deployment", detail: "Move production traffic with a rollback plan and minimal disruption to downstream consumers." },
+  { step: "Operate", detail: "Hand over with documentation and training, or continue under a managed-services partnership." },
+];
+
+export const migrationMethodology = standardMethodology;
+
+export const migrationSolutions: MigrationSolution[] = [
+  {
+    slug: "snowflake-databricks",
+    kind: "migration",
+    source: "Snowflake",
+    name: "Snowflake \u2192 Databricks",
+    short: "Structured migration of Snowflake workloads to the Databricks Lakehouse.",
+    heroSubhead:
+      "Modernize your data platform with a structured migration from Snowflake to Databricks — covering architecture, data pipelines, workloads, governance, performance optimization and production cutover.",
+    migrates: [
+      { title: "Data", items: ["Snowflake tables", "Views", "Schemas", "External tables", "Historical data"] },
+      { title: "SQL", items: ["SQL transformations", "Stored procedures", "UDFs", "Queries"] },
+      { title: "Pipelines", items: ["ETL/ELT", "Airflow", "dbt", "ADF", "Custom pipelines"] },
+      { title: "Security", items: ["Roles", "Permissions", "Access policies", "Data governance"] },
+      { title: "Analytics", items: ["BI workloads", "Dashboards", "Reporting queries"] },
+    ],
+    challenges: [
+      "Snowflake SQL to Databricks SQL differences",
+      "Stored procedure conversion",
+      "UDF migration",
+      "Data type differences",
+      "Incremental loading & CDC",
+      "Pipeline orchestration changes",
+      "Security model & role/permission mapping",
+      "Performance differences and query re-tuning",
+      "Data validation across both platforms",
+      "BI tool connectivity & cutover strategy",
+    ],
+    faqs: [
+      { q: "Can you migrate Snowflake tables to Databricks?", a: "Yes — tables, views, schemas, external tables and historical data are all in scope, migrated into Delta format on the Lakehouse." },
+      { q: "How long does a Snowflake to Databricks migration take?", a: "It depends on data volume and pipeline complexity, but most mid-sized environments move through assessment to cutover in a matter of months, delivered in phases rather than a single cutover." },
+      { q: "Can Snowflake SQL be converted to Databricks SQL?", a: "Most SQL converts directly; we handle the syntax and function differences, and rewrite stored procedures and UDFs where a direct translation isn't possible." },
+      { q: "Can existing dbt pipelines be migrated?", a: "Yes — dbt models can typically be re-pointed at Databricks SQL warehouses with adapter and configuration changes rather than a full rewrite." },
+      { q: "What happens to our BI dashboards?", a: "We validate and repoint BI connections (Power BI, Tableau, etc.) to Databricks SQL warehouses, and confirm report outputs match pre-migration baselines before cutover." },
+      { q: "Can we migrate incrementally?", a: "Yes — we typically migrate by workload or domain, running Snowflake and Databricks in parallel until each piece is validated." },
+      { q: "How do you validate migrated data?", a: "We compare record counts, aggregations, and business-rule outputs between Snowflake and Databricks for every migrated table before it's signed off." },
+      { q: "Can you migrate without significant production downtime?", a: "Yes — a parallel-run and phased cutover approach means production keeps running on Snowflake until each workload is validated on Databricks." },
+      { q: "How much does Snowflake \u2192 Databricks migration cost?", a: "Cost depends on data volume, workload complexity, and pipeline count. Book a migration assessment and we'll scope it against your actual environment." },
+    ],
+    architectureLabel: "SQL Translation & Warehouse Migration",
+    architectureTech: ["snowflake", "sql", "deltalake", "unitycatalog", "dbt"],
+  },
+  {
+    slug: "talend-databricks",
+    kind: "migration",
+    source: "Talend",
+    name: "Talend \u2192 Databricks",
+    short: "Re-platform Talend ETL jobs onto native Databricks pipelines.",
+    heroSubhead:
+      "Retire Talend licensing and job-server overhead by re-platforming your ETL pipelines onto native Databricks jobs and Delta Live Tables — with the same data contracts and SLAs.",
+    migrates: [
+      { title: "Jobs", items: ["Talend ETL jobs", "Job orchestration & scheduling", "Reusable job components"] },
+      { title: "Data", items: ["Source & target connections", "Staging tables", "Historical loads"] },
+      { title: "Transformations", items: ["tMap & transformation logic", "Data quality routines", "Custom Java routines"] },
+      { title: "Operations", items: ["Monitoring & alerting", "Error handling & retries", "Logging & audit trails"] },
+    ],
+    challenges: [
+      "Translating tMap logic into Spark-native transformations",
+      "Re-implementing custom Java routines",
+      "Job orchestration & scheduling parity",
+      "Data quality rule migration",
+      "Error handling & retry logic differences",
+      "Connector & source-system compatibility",
+      "Performance re-tuning for distributed compute",
+      "Parallel-run validation against Talend outputs",
+    ],
+    faqs: [
+      { q: "Do we need to rewrite every Talend job by hand?", a: "No — many jobs map cleanly to Databricks notebooks or Delta Live Tables pipelines; we prioritise by complexity and business criticality rather than a blanket rewrite." },
+      { q: "What happens to our data quality rules?", a: "Talend's data quality routines are re-implemented as Databricks expectations (via Delta Live Tables) or PySpark validation steps, with equivalent enforcement." },
+      { q: "Can job scheduling stay the same?", a: "We typically move orchestration to Databricks Workflows or your existing orchestrator (Airflow, ADF), preserving the same triggers and dependencies." },
+      { q: "How do you validate the migrated jobs?", a: "We run Talend and Databricks pipelines in parallel and compare outputs at the row and aggregate level before decommissioning the Talend job." },
+    ],
+    architectureLabel: "Job Re-engineering into Delta Live Tables",
+    architectureTech: ["talend", "kafka", "deltalake", "python", "unitycatalog"],
+  },
+  {
+    slug: "vertica-databricks",
+    kind: "migration",
+    source: "Vertica",
+    name: "Vertica \u2192 Databricks",
+    short: "Move Vertica analytical workloads to the Databricks Lakehouse.",
+    heroSubhead:
+      "Migrate Vertica's analytical database workloads — schemas, projections, and heavy analytical SQL — onto a Databricks Lakehouse architecture built for both BI and AI.",
+    migrates: [
+      { title: "Data", items: ["Tables & schemas", "Projections & sort orders", "Historical partitions"] },
+      { title: "SQL", items: ["Analytical SQL & window functions", "Stored procedures", "User-defined functions"] },
+      { title: "Pipelines", items: ["Batch load jobs", "COPY-based ingestion", "Scheduled ELT"] },
+      { title: "Access", items: ["Roles & grants", "Resource pools", "Workload management policies"] },
+    ],
+    challenges: [
+      "Re-designing Vertica projections as Delta clustering/partitioning",
+      "Vertica-specific SQL syntax and function conversion",
+      "Resource-pool & workload management equivalents",
+      "COPY-based ingestion re-platforming",
+      "Query performance parity on distributed compute",
+      "Validating analytical query outputs at scale",
+    ],
+    faqs: [
+      { q: "What replaces Vertica's projections in Databricks?", a: "Delta Lake's Z-ordering, liquid clustering, and file-layout optimisation serve a similar performance role, tuned per table based on query patterns." },
+      { q: "Can heavy analytical SQL run as-is?", a: "Most ANSI SQL carries over; Vertica-specific functions and window-function edge cases are rewritten and validated during migration." },
+      { q: "How do you handle Vertica's workload management?", a: "We map resource pools and workload policies onto Databricks cluster policies, job pools, and SQL warehouse sizing." },
+    ],
+    architectureLabel: "Projection Redesign & Analytical Re-platforming",
+    architectureTech: ["vertica", "sql", "deltalake", "spark", "unitycatalog"],
+  },
+  {
+    slug: "azure-databricks",
+    kind: "cloud",
+    name: "Azure Databricks",
+    short: "Deploy and operate Databricks natively on Microsoft Azure.",
+    heroSubhead:
+      "Design, deploy, and operate Databricks on Azure — integrated with Azure Data Lake Storage, Microsoft Entra ID, Azure networking, and the wider Microsoft data estate.",
+    migrates: [
+      { title: "Platform setup", items: ["Workspace deployment", "VNet injection & private link", "Unity Catalog on Azure"] },
+      { title: "Integration", items: ["Azure Data Lake Storage Gen2", "Microsoft Entra ID (Azure AD)", "Azure Data Factory & Synapse"] },
+      { title: "Operations", items: ["Cost management & budgets", "Monitoring via Azure Monitor", "CI/CD with Azure DevOps"] },
+    ],
+    challenges: [
+      "VNet injection & private networking design",
+      "Entra ID identity federation & SCIM provisioning",
+      "Storage account & ADLS Gen2 access patterns",
+      "Integration with Synapse and Fabric where present",
+      "Cost allocation across shared Azure subscriptions",
+    ],
+    faqs: [
+      { q: "Can Azure Databricks integrate with our existing Azure AD?", a: "Yes — we set up Microsoft Entra ID federation and SCIM provisioning so existing users and groups carry over directly." },
+      { q: "Do you handle networking and security setup?", a: "Yes — VNet injection, private endpoints, and firewall rules are part of our standard Azure Databricks architecture engagement." },
+      { q: "Can this coexist with Microsoft Fabric?", a: "Yes — many clients run Databricks for engineering and AI workloads alongside Fabric/Power BI for reporting; we design the integration between the two." },
+    ],
+    architectureLabel: "Azure-Native Landing Zone & Governance",
+    architectureTech: ["azure", "deltalake", "unitycatalog", "azuremonitor", "terraform"],
+  },
+  {
+    slug: "aws-databricks",
+    kind: "cloud",
+    name: "AWS Databricks",
+    short: "Deploy and operate Databricks natively on Amazon Web Services.",
+    heroSubhead:
+      "Design, deploy, and operate Databricks on AWS — integrated with S3, IAM, VPC networking, and the wider AWS data and ML ecosystem.",
+    migrates: [
+      { title: "Platform setup", items: ["Workspace deployment", "VPC & PrivateLink networking", "Unity Catalog on AWS"] },
+      { title: "Integration", items: ["Amazon S3 & Delta Lake", "IAM roles & instance profiles", "Glue, Redshift & EMR interoperability"] },
+      { title: "Operations", items: ["Cost & usage monitoring", "CloudWatch integration", "CI/CD with GitHub Actions/CodePipeline"] },
+    ],
+    challenges: [
+      "VPC design & PrivateLink configuration",
+      "IAM role and instance-profile permission modelling",
+      "S3 bucket policy & cross-account access design",
+      "Interoperability with existing Glue/Redshift/EMR workloads",
+      "Reserved capacity & cost optimisation across accounts",
+    ],
+    faqs: [
+      { q: "Can Databricks on AWS integrate with our existing S3 data lake?", a: "Yes — we configure Unity Catalog and Delta Lake directly against your existing S3 buckets, preserving existing data without a forced copy." },
+      { q: "Do you handle IAM and security design?", a: "Yes — IAM roles, instance profiles, and PrivateLink networking are set up as part of the architecture engagement, aligned to your existing AWS security model." },
+      { q: "Can Databricks coexist with Redshift or EMR?", a: "Yes — many clients run Databricks alongside existing Redshift or EMR workloads during a phased transition, or long-term for specific use cases." },
+    ],
+    architectureLabel: "AWS-Native Landing Zone & Governance",
+    architectureTech: ["aws", "deltalake", "unitycatalog", "cloudops", "terraform"],
+  },
+];
+
+export const performanceProblems = [
+  "Long-running Spark jobs",
+  "Expensive SQL queries",
+  "Small-file problems",
+  "Poor cluster utilization",
+  "Slow joins",
+  "Excessive shuffles",
+  "Inefficient data layouts",
+  "Poor partitioning",
+  "Slow MERGE operations",
+  "High-latency dashboards",
+];
+
+export const performanceAnalysisAreas = [
+  { title: "Spark", items: ["Query execution plans", "Shuffle behaviour", "Partitioning & skew", "Parallelism", "Executor utilization"] },
+  { title: "Delta Lake", items: ["File sizes", "Data layout", "OPTIMIZE & compaction", "Liquid clustering", "Data skipping", "Deletion vectors"] },
+  { title: "SQL", items: ["Joins", "Filters", "Aggregations", "Subqueries", "Query plans"] },
+  { title: "Compute", items: ["Cluster sizing", "Worker configuration", "Photon", "Autoscaling", "Spot instances", "Workload isolation"] },
+  { title: "Architecture", items: ["Bronze/Silver/Gold design", "Incremental processing", "Streaming architecture", "Job dependencies"] },
+];
+
+export const performanceMethodology = [
+  { step: "Baseline", detail: "Capture current runtime, cost, and resource utilization before any change is made." },
+  { step: "Profile", detail: "Analyse Spark UI, query plans, and cluster metrics to find where time is actually spent." },
+  { step: "Identify Bottlenecks", detail: "Pinpoint the specific jobs, queries, or layouts responsible for the majority of runtime." },
+  { step: "Optimize", detail: "Apply targeted changes to SQL, Delta layout, cluster configuration, or architecture." },
+  { step: "Benchmark", detail: "Re-run against the same baseline to quantify the improvement." },
+  { step: "Validate", detail: "Confirm output correctness hasn't changed alongside the performance gain." },
+  { step: "Production Rollout", detail: "Roll changes out with monitoring in place to catch regressions early." },
+];
+
+export const costProblems = [
+  "High DBU consumption",
+  "Oversized clusters",
+  "Poor autoscaling configuration",
+  "Idle clusters",
+  "Inefficient SQL burning compute",
+  "Excessive data scans",
+  "Repeated, redundant processing",
+  "Poor job scheduling",
+  "Inefficient storage",
+  "Non-optimal compute selection",
+];
+
+export const costMethodology = [
+  { step: "Usage Analysis", detail: "Break down DBU and cloud spend by workspace, job, and team." },
+  { step: "Workload Analysis", detail: "Identify which jobs and queries account for the bulk of consumption." },
+  { step: "Compute Analysis", detail: "Review cluster sizing, autoscaling policy, and instance selection." },
+  { step: "Storage Analysis", detail: "Review file layout, retention, and redundant storage." },
+  { step: "Optimization", detail: "Implement right-sizing, scheduling, and configuration changes." },
+  { step: "Savings Measurement", detail: "Report before/after spend so savings are measurable, not anecdotal." },
+];
+
+export const architectureTopics = [
+  "Lakehouse architecture",
+  "Medallion architecture",
+  "Unity Catalog",
+  "Security",
+  "Multi-workspace architecture",
+  "Networking",
+  "CI/CD",
+  "Dev/Test/Prod separation",
+  "Data governance",
+  "Streaming",
+  "Batch",
+  "ML/AI",
+  "MLOps",
+  "Disaster recovery",
+  "Cost architecture",
+];
+
+export const engagementModels = [
+  { title: "Architecture Consulting", detail: "Short-term architecture and design engagements to de-risk a build before it starts." },
+  { title: "Migration Projects", detail: "End-to-end migration delivery from assessment through production cutover." },
+  { title: "Optimization", detail: "Performance and cost assessment engagements with measured, reported outcomes." },
+  { title: "Managed Engineering", detail: "Ongoing Databricks engineering support under a retainer." },
+  { title: "Staff Augmentation", detail: "Senior Databricks engineers and architects embedded in your team." },
+];
+
+/* -------------------------------------------------------------------------- */
+/* Navigation menu configuration (multi-level)                                */
+/* -------------------------------------------------------------------------- */
+
+export type NavMenuLink = { label: string; href: string; indent?: boolean };
+export type NavMenuColumn = { label: string; href: string; children?: NavMenuLink[] };
+
+export const servicesMenuColumns: NavMenuColumn[] = [
+  { label: "Data Engineering", href: "/services/data-engineering" },
+  {
+    label: "AI Solutions",
+    href: "/services/ai-solutions",
+    children: aiSolutionsGroup.items.map((i) => ({ label: i.name, href: `/services/ai-solutions/${i.slug}` })),
+  },
+  {
+    label: "MLOps",
+    href: "/services/mlops",
+    children: mlopsGroup.items.map((i) => ({ label: i.name, href: `/services/mlops/${i.slug}` })),
+  },
+  {
+    label: "Databricks Consulting",
+    href: "/services/databricks-consulting",
+    children: databricksConsultingGroup.items.map((i) => ({ label: i.name.replace("Databricks ", ""), href: `/services/${i.slug}` })),
+  },
+];
+
+export const solutionsMenuLinks: NavMenuLink[] = migrationSolutions.map((s) => ({
+  label: s.name,
+  href: `/solutions/${s.slug}`,
+}));
+
+/* Unified "Solutions" mega-menu — 4 numbered groups matching the full site hierarchy */
+export const solutionsMegaMenuColumns: NavMenuColumn[] = [
+  {
+    label: "01. Platform Migration & Modernization",
+    href: "/services/databricks-consulting",
+    children: [
+      { label: "Databricks Migration", href: "/services/databricks-migration" },
+      { label: "Talend \u2192 Databricks", href: "/solutions/talend-databricks", indent: true },
+      { label: "Vertica \u2192 Databricks", href: "/solutions/vertica-databricks", indent: true },
+      { label: "Snowflake \u2192 Databricks", href: "/solutions/snowflake-databricks", indent: true },
+      { label: "Databricks Architecture", href: "/services/databricks-architecture" },
+      { label: "Performance Optimization", href: "/services/databricks-performance-optimization" },
+      { label: "Cost Optimization", href: "/services/databricks-cost-optimization" },
+      { label: "Azure Databricks", href: "/solutions/azure-databricks" },
+      { label: "AWS Databricks", href: "/solutions/aws-databricks" },
+    ],
+  },
+  {
+    label: "02. Data Engineering",
+    href: "/services/data-engineering",
+    children: dataEngineeringGroup.items.map((i) => ({ label: i.name, href: `/services/data-engineering/${i.slug}` })),
+  },
+  {
+    label: "03. AI Solutions",
+    href: "/services/ai-solutions",
+    children: aiSolutionsGroup.items.map((i) => ({ label: i.name, href: `/services/ai-solutions/${i.slug}` })),
+  },
+  {
+    label: "04. MLOps",
+    href: "/services/mlops",
+    children: mlopsGroup.items.map((i) => ({ label: i.name, href: `/services/mlops/${i.slug}` })),
+  },
+];
+
+export const industriesMenuLinks: NavMenuLink[] = industries.map((i) => ({
+  label: i.name,
+  href: `/industries/${i.slug}`,
+}));
+
+export const companyMenuLinks: NavMenuLink[] = [
+  { label: "About", href: "/about" },
+  { label: "Careers", href: "/careers" },
+  { label: "Contact", href: "/contact" },
+];
+
+/* -------------------------------------------------------------------------- */
+/* Products                                                                    */
+/* -------------------------------------------------------------------------- */
+
+export type ProductProcessStep = { title: string; detail: string };
+
+export type Product = {
+  slug: string;
+  name: string;
+  shortName: string;
+  category: string;
+  tagline: string;
+  heroSubhead: string;
+  description: string;
+  journeyStage: "Discover" | "Transform" | "Evolve" | "Trust";
+  journeyQuestion: string;
+  journeyVerbs: string[];
+  problems: string[];
+  features: { title: string; detail: string }[];
+  process: ProductProcessStep[];
+  howItWorks: { title: string; description: string; points: string[] };
+  integrations: string[];
+  faqs: { q: string; a: string }[];
+  cta: string;
+};
+
+export const products: Product[] = [
+  {
+    slug: "karsient-shiftiq",
+    name: "Karsient ShiftIQ",
+    shortName: "ShiftIQ",
+    category: "AI-Powered Legacy Modernization Intelligence",
+    tagline: "Understand Legacy. Plan the Shift. Modernize With Intelligence.",
+    heroSubhead:
+      "ShiftIQ analyzes complex legacy applications — code, dependencies, business rules and data flows — to tell you exactly what you have, what it does, and how it should be modernized, before migration begins.",
+    description:
+      "Enterprises often carry millions of lines of legacy code, undocumented business rules, tangled dependencies, and decades of accumulated technical debt. Before migrating any of it, you need to know what you actually have — what's safe to move as-is, what needs redesign, and where the risk sits. ShiftIQ builds that picture with AI-powered analysis across your entire legacy estate.",
+    journeyStage: "Discover",
+    journeyQuestion: "What do we have?",
+    journeyVerbs: ["Discover", "Analyze", "Understand", "Assess", "Plan"],
+    problems: [
+      "Millions of lines of legacy code with no current inventory",
+      "Undocumented business rules buried in stored procedures and jobs",
+      "Complex, hidden dependencies across applications and workloads",
+      "No consistent way to score technical debt or migration risk",
+      "No defensible way to estimate effort before committing to a migration",
+    ],
+    features: [
+      { title: "Legacy code discovery", detail: "Automated inventory of applications, jobs, schemas, and code across the legacy estate." },
+      { title: "AI-powered code analysis", detail: "Deep static analysis of SQL, stored procedures, and ETL logic using AI-assisted parsing." },
+      { title: "Dependency analysis", detail: "Maps every dependency between tables, views, procedures, and jobs into a queryable graph." },
+      { title: "Business-rule identification", detail: "Surfaces the business logic embedded in legacy code so it isn't lost in translation." },
+      { title: "Data-flow analysis", detail: "Traces how data actually moves through the estate, not just how it's documented." },
+      { title: "Application & workload classification", detail: "Groups applications and workloads by type, criticality, and modernization pattern." },
+      { title: "Migration complexity scoring", detail: "Scores every object and application so the easiest, highest-value work can go first." },
+      { title: "Technical-debt assessment", detail: "Quantifies technical debt across the estate to justify and prioritize modernization." },
+      { title: "Migration-readiness assessment", detail: "Flags what's ready to migrate as-is versus what needs redesign first." },
+      { title: "Source-to-target technology mapping", detail: "Maps legacy constructs to their Databricks-native equivalents ahead of conversion." },
+      { title: "Migration effort estimation", detail: "Rolls complexity and readiness scores up into a defensible effort and timeline estimate." },
+      { title: "Automated modernization assessment reports", detail: "Board-ready reports summarizing scope, risk, effort, and recommended sequencing." },
+    ],
+    process: [
+      { title: "Discover", detail: "Inventory applications, code, schemas, and workloads across the legacy estate." },
+      { title: "Analyze", detail: "Run AI-powered code and dependency analysis across every discovered object." },
+      { title: "Understand", detail: "Surface business rules and data flows hidden inside legacy logic." },
+      { title: "Assess", detail: "Score complexity, technical debt, and migration readiness for every workload." },
+      { title: "Plan", detail: "Deliver a sequenced modernization plan with effort estimates and technology mapping." },
+    ],
+    howItWorks: {
+      title: "How ShiftIQ analyzes your legacy code",
+      description:
+        "ShiftIQ doesn't just scan file names — it parses every object into a dialect-aware abstract syntax tree, then reasons over that structure with AI models trained on legacy SQL and ETL patterns.",
+      points: [
+        "Parses SQL, stored procedures, and ETL job definitions into a dialect-aware AST",
+        "Cross-references every table, view, and procedure to build a live dependency graph",
+        "Uses AI pattern-matching to infer business rules embedded in procedural logic",
+        "Scores each object for complexity, risk, and technical debt using a weighted model",
+      ],
+    },
+    integrations: ["talend", "vertica", "oracle", "informatica", "ssis", "teradata", "sql", "databricks"],
+    faqs: [
+      { q: "Does ShiftIQ modify our source systems?", a: "No — ShiftIQ is read-only. It analyzes code, metadata, and exported definitions and never writes back to a source system." },
+      { q: "Can ShiftIQ assess applications beyond a single legacy platform?", a: "Yes — ShiftIQ is used for Talend, Vertica, Oracle, Informatica, and SQL Server assessments, among others, and can be extended to additional source technologies." },
+      { q: "How does ShiftIQ's output feed into a migration?", a: "The migration-readiness report, complexity scores, and technology mapping produced by ShiftIQ feed directly into a CodeShift-led transformation." },
+    ],
+    cta: "Assess Your Legacy Environment",
+  },
+  {
+    slug: "karsient-codeshift",
+    name: "Karsient CodeShift",
+    shortName: "CodeShift",
+    category: "AI-Powered Code Transformation & Migration",
+    tagline: "Transform Legacy Code. Accelerate Modernization.",
+    heroSubhead:
+      "CodeShift transforms legacy code and data workloads into modern, production-ready implementations — converting SQL, stored procedures, and ETL jobs into Databricks-native code while preserving business logic and transformation intent.",
+    description:
+      "Legacy migration is usually slowed down by manual code conversion, thin documentation, inconsistent coding patterns, and the risk of quietly changing business logic along the way. CodeShift applies AI-assisted, rule-based transformation — tuned per source technology — to convert legacy workloads into modern, production-ready Databricks code, with every conversion mapped, documented, and queued for human review where it matters.",
+    journeyStage: "Transform",
+    journeyQuestion: "How do we migrate it?",
+    journeyVerbs: ["Transform", "Convert", "Generate", "Migrate", "Validate"],
+    problems: [
+      "Manual code conversion is slow and inconsistent across a large team",
+      "Legacy stored procedures and ETL jobs don't map 1:1 to modern equivalents",
+      "Limited documentation increases the risk of losing business logic in translation",
+      "Inconsistent legacy coding patterns make automated conversion harder to trust",
+      "No structured workflow for human review of AI-generated conversions",
+    ],
+    features: [
+      { title: "AI-assisted code conversion", detail: "AI-driven translation of legacy code into modern, idiomatic Databricks implementations." },
+      { title: "Legacy SQL modernization", detail: "Converts legacy SQL dialects and functions into Databricks SQL." },
+      { title: "ETL transformation", detail: "Re-platforms ETL logic into Databricks-native pipelines and workflows." },
+      { title: "Talend-to-Databricks conversion", detail: "Converts Talend jobs into PySpark and Delta Live Tables pipelines." },
+      { title: "Informatica-to-Databricks conversion", detail: "Converts Informatica mappings and workflows into Databricks-native equivalents." },
+      { title: "Vertica-to-Databricks conversion", detail: "Converts Vertica SQL and projection logic into Delta Lake-optimized implementations." },
+      { title: "Stored-procedure modernization", detail: "Converts stored procedures into PySpark functions or SQL-based equivalents." },
+      { title: "SQL-to-PySpark transformation", detail: "Transforms SQL-centric logic into distributed PySpark where it improves performance." },
+      { title: "Source-to-target mapping", detail: "Produces a traceable map from every source object to its converted target implementation." },
+      { title: "Business-rule preservation", detail: "Validates that business logic identified upstream is preserved through conversion." },
+      { title: "Modern coding pattern generation", detail: "Generates code that follows current Databricks engineering best practice, not literal translation." },
+      { title: "Automated migration documentation", detail: "Documents every conversion automatically, keeping the migration audit-ready." },
+      { title: "Human review & approval workflows", detail: "Routes lower-confidence conversions to an engineer before anything ships to production." },
+    ],
+    process: [
+      { title: "Transform", detail: "Take the object model and priorities produced by ShiftIQ as the transformation scope." },
+      { title: "Convert", detail: "Apply AI-assisted, dialect-specific rules to convert each object." },
+      { title: "Generate", detail: "Generate modern Databricks SQL, PySpark, or Delta Live Tables code." },
+      { title: "Migrate", detail: "Move converted workloads into the target environment in planned, testable phases." },
+      { title: "Validate", detail: "Route lower-confidence conversions to engineer review before sign-off." },
+    ],
+    howItWorks: {
+      title: "How CodeShift converts legacy workloads",
+      description:
+        "CodeShift combines a deterministic, dialect-specific rules engine with AI-assisted pattern generation — so common constructs convert instantly, and only genuinely ambiguous logic goes to a model.",
+      points: [
+        "Applies dialect-specific transformation rules for direct, high-confidence conversions",
+        "Uses AI to generate idiomatic PySpark/SQL for logic that doesn't map 1:1",
+        "Cross-checks every conversion against the business rules ShiftIQ identified upstream",
+        "Assigns a confidence score per object and routes anything below threshold to review",
+      ],
+    },
+    integrations: ["talend", "vertica", "oracle", "informatica", "databricks", "deltalake", "python"],
+    faqs: [
+      { q: "Does CodeShift convert 100% of our code automatically?", a: "No — CodeShift maximizes safe automation while explicitly flagging anything it isn't confident about, rather than silently producing incorrect code." },
+      { q: "Can we review conversions before they're applied?", a: "Yes — every conversion goes through a documented review workflow, and lower-confidence items are queued automatically for engineer sign-off." },
+      { q: "Does CodeShift work without ShiftIQ?", a: "CodeShift is designed to consume ShiftIQ's assessment output, but can also ingest a manually scoped inventory if a full ShiftIQ assessment hasn't been run." },
+    ],
+    cta: "Start Code Transformation",
+  },
+  {
+    slug: "karsient-revocode",
+    name: "Karsient RevoCode",
+    shortName: "RevoCode",
+    category: "AI-Powered Code Modernization & Optimization Platform",
+    tagline: "Modernize Today. Continuously Engineer Tomorrow.",
+    heroSubhead:
+      "RevoCode continuously analyzes your modernized Databricks codebase — refactoring, optimizing, and evolving it after migration, so performance and cost stay under control long after cutover.",
+    description:
+      "Migration is not the finish line. Even after modernization, enterprise codebases accumulate technical debt, inefficient SQL, unnecessary complexity, duplicated logic, and performance problems. RevoCode is not another migration converter — it's what runs after CodeShift, continuously analyzing the modernized codebase to find what's degrading and recommend how to fix it.",
+    journeyStage: "Evolve",
+    journeyQuestion: "How do we make it better?",
+    journeyVerbs: ["Refactor", "Optimize", "Reduce Technical Debt", "Improve Performance", "Continuously Modernize"],
+    problems: [
+      "Technical debt re-accumulates in the codebase even after modernization",
+      "Inefficient SQL and PySpark patterns creep in as new logic is added",
+      "Duplicated and dead code goes undetected across a growing codebase",
+      "No continuous visibility into architecture or maintainability quality",
+      "Databricks workload and cloud cost creep without a clear owner",
+    ],
+    features: [
+      { title: "AI-powered code refactoring", detail: "Recommends and generates refactored implementations for inefficient or complex code." },
+      { title: "Code quality improvement", detail: "Continuously scores and flags code quality issues across the modernized estate." },
+      { title: "SQL optimization", detail: "Identifies expensive joins, scans, and query patterns and recommends optimized alternatives." },
+      { title: "PySpark optimization", detail: "Flags inefficient PySpark transformations and recommends distributed-processing best practice." },
+      { title: "Performance recommendations", detail: "Surfaces the specific changes that will move the performance needle, ranked by impact." },
+      { title: "Technical-debt reduction", detail: "Tracks technical debt over time and recommends a prioritized reduction plan." },
+      { title: "Duplicate-code detection", detail: "Finds duplicated logic across notebooks, jobs, and pipelines." },
+      { title: "Dead-code identification", detail: "Flags code and pipelines that are no longer referenced or executed." },
+      { title: "Architecture improvement recommendations", detail: "Recommends structural changes to medallion layers, jobs, and data models." },
+      { title: "Cloud optimization", detail: "Identifies inefficient cloud resource usage tied to specific workloads." },
+      { title: "Databricks workload optimization", detail: "Recommends cluster, Photon, and Delta configuration changes per workload." },
+      { title: "Cost optimization recommendations", detail: "Ranks optimization opportunities by expected cost impact, not just performance." },
+      { title: "Maintainability scoring", detail: "Scores code maintainability so engineering leaders can track quality over time." },
+      { title: "Continuous modernization recommendations", detail: "Delivers an ongoing backlog of modernization work rather than a one-time report." },
+    ],
+    process: [
+      { title: "Refactor", detail: "Analyze the modernized codebase and recommend refactored implementations." },
+      { title: "Optimize", detail: "Identify inefficient SQL, PySpark, and Databricks workload configurations." },
+      { title: "Reduce Technical Debt", detail: "Detect duplicate and dead code, and track technical debt over time." },
+      { title: "Improve Performance", detail: "Rank and recommend the changes with the largest performance impact." },
+      { title: "Continuously Modernize", detail: "Deliver an ongoing, prioritized backlog of modernization recommendations." },
+    ],
+    howItWorks: {
+      title: "How RevoCode finds what to optimize",
+      description:
+        "RevoCode continuously profiles the modernized codebase — static analysis of code structure, plus runtime signals from actual Databricks job execution — to separate real bottlenecks from noise.",
+      points: [
+        "Analyzes query plans and Spark execution graphs to find expensive joins and shuffles",
+        "Runs static analysis across notebooks and jobs to detect duplicate and dead code",
+        "Correlates cost and performance data per workload to rank recommendations by impact",
+        "Tracks maintainability and technical-debt scores over time, not just a single snapshot",
+      ],
+    },
+    integrations: ["databricks", "deltalake", "python", "sql", "cloudops", "azuremonitor"],
+    faqs: [
+      { q: "Is RevoCode another migration tool?", a: "No — RevoCode assumes migration is already complete. It continuously analyzes and improves the modernized codebase rather than converting anything new." },
+      { q: "Does RevoCode make changes automatically?", a: "RevoCode recommends specific, ranked changes with generated implementations; your team reviews and approves before anything is deployed." },
+      { q: "Can RevoCode track improvement over time?", a: "Yes — maintainability, technical-debt, and cost-optimization scores are tracked continuously, so improvement is measurable, not anecdotal." },
+    ],
+    cta: "Optimize Your Modern Codebase",
+  },
+  {
+    slug: "karsient-veriq",
+    name: "Karsient Veriq",
+    shortName: "Veriq",
+    category: "AI-Native Data Trust & Control Plane",
+    tagline: "From Data Quality to Data Trust.",
+    heroSubhead:
+      "Veriq sits across your existing data platforms and continuously understands, protects, governs, and improves data as it moves — so problems are contained and explained before they reach the business, not discovered after.",
+    description:
+      "Karsient Veriq transforms data quality from a reactive validation process into a continuously governed, explainable, and self-improving data trust system. Instead of letting bad data travel through the platform and surfacing problems later, Veriq evaluates every dataset, batch, stream, and record as it moves — deciding whether it should pass, warn, be quarantined, or be repaired, without requiring you to rebuild a single existing pipeline.",
+    journeyStage: "Trust",
+    journeyQuestion: "Can we trust this data?",
+    journeyVerbs: ["Detect", "Govern", "Quarantine", "Resolve", "Trust"],
+    problems: [
+      "Bad data travels through the platform undetected until it hits a dashboard or a decision",
+      "A single bad record can stop an entire pipeline instead of just the records that need attention",
+      "Thousands of failures get investigated one by one instead of as a single root cause",
+      "Rule engines require constant manual upkeep as data and sources evolve",
+      "Executives have no single, trustworthy view of enterprise data health",
+    ],
+    features: [
+      { title: "Veriq Connect", detail: "Universal, configuration-driven connectors for Databricks, Snowflake, Azure, AWS, Spark, Kafka, dbt, and orchestration platforms — attach without a pipeline redesign." },
+      { title: "Veriq Observe", detail: "Continuous profiling, monitoring, and anomaly detection that adapts its expectations to Bronze, Silver, and Gold layers automatically." },
+      { title: "Veriq Govern", detail: "Rules, policies, ownership, lineage, and a full audit trail — governance by design, not bolted on afterward." },
+      { title: "Veriq Quarantine", detail: "Record-level containment that turns every failure into an investigable incident, not a silent rejection." },
+      { title: "Veriq Copilot", detail: "A conversational AI data-steward assistant that explains failures with evidence and root cause, not just an alert." },
+      { title: "Veriq Resolve", detail: "Deterministic fixes execute automatically within policy; governed fixes route to a human for approval." },
+      { title: "Veriq Replay", detail: "Repaired records are revalidated through the same quality controls before re-entering the trusted layer." },
+      { title: "Veriq Command Center", detail: "An executive data-intelligence view of enterprise Data Trust Score, incidents, and resolution trends." },
+      { title: "AI root-cause intelligence", detail: "Correlates thousands of failures back to a single upstream schema change or source defect." },
+      { title: "Quality Intelligence Graph", detail: "Connects source, pipeline, dataset, column, rule, failure, and remediation into one queryable graph." },
+      { title: "Adaptive quality intelligence", detail: "Proposes candidate quality expectations from historical data and past incidents — AI proposes, governance approves." },
+      { title: "Data Trust Score", detail: "A multi-dimensional score across accuracy, completeness, consistency, freshness, and business impact, drillable to record level." },
+    ],
+    process: [
+      { title: "Detect", detail: "Continuously evaluate data as it moves — at record, batch, dataset, and pipeline level." },
+      { title: "Quarantine", detail: "Contain suspicious or defective records as investigable incidents instead of silent failures." },
+      { title: "Investigate", detail: "Veriq Copilot explains what happened, why, where it originated, and what it affects." },
+      { title: "Remediate", detail: "Apply deterministic fixes automatically, or route governed fixes for steward approval." },
+      { title: "Revalidate & Release", detail: "Repaired records pass back through quality controls before re-entering the trusted layer." },
+    ],
+    integrations: ["databricks", "snowflake", "azure", "aws", "spark", "kafka", "sql", "dbt", "airflow"],
+    faqs: [
+      { q: "Does Veriq require us to redesign our existing pipelines?", a: "No — Veriq is a plug-and-play quality layer. A data engineer attaches it to an existing pipeline through configuration and starts receiving quality intelligence immediately." },
+      { q: "Does one bad record stop the whole pipeline?", a: "No — Veriq evaluates at the record level. Valid records continue, suspicious records are flagged, and only defective records are quarantined, so healthy data keeps flowing." },
+      { q: "Can Veriq automatically change production data?", a: "Only deterministic, policy-approved fixes (like date normalization or standard formatting) run automatically. Anything involving business value, financial data, or customer identity requires steward approval." },
+      { q: "How is the Data Trust Score different from a pass-rate percentage?", a: "It's a multi-dimensional score across accuracy, completeness, consistency, validity, freshness, and business impact — not a single pass/fail ratio — and it's drillable from enterprise level down to an individual record." },
+    ],
+    cta: "Establish Data Trust",
+    howItWorks: {
+      title: "Inside the Data Trust Layer",
+      description:
+        "Veriq doesn't wait for a nightly job to fail. It evaluates data continuously as it moves through your platform, using a decision framework that treats every record on its own merits rather than pass/failing an entire batch.",
+      points: [
+        "Every record is scored against layer-aware expectations — Bronze checks ingestion integrity and schema drift, Silver checks standardization and referential integrity, Gold checks business rules and KPI accuracy",
+        "The Trust → Pass → Warn → Quarantine → Remediate → Revalidate → Release framework decides the outcome per record, not per batch",
+        "When failures spike, the Quality Intelligence Graph traces them back to a single upstream cause — a schema change or source defect — instead of surfacing thousands of unrelated alerts",
+        "Veriq Copilot turns that root-cause analysis into a plain-language answer a data steward can act on without paging an engineer",
+      ],
+    },
+  },
+];
+
+export const productsMenuLinks: NavMenuLink[] = products.map((p) => ({
+  label: p.name,
+  href: `/products/${p.slug}`,
+}));
+
+/* Supplementary content for the Products overview page */
+export const productTargetIndustries = [
+  "Banking",
+  "Insurance",
+  "Healthcare",
+  "Manufacturing",
+  "Retail",
+  "Agriculture",
+  "Pharmaceuticals",
+  "Energy",
+  "Telecommunications",
+];
+
+export const productTargetPersonas = [
+  "CTO",
+  "CIO",
+  "Chief Data Officer",
+  "Enterprise Architect",
+  "Data Architect",
+  "Engineering Director",
+  "Head of Data Engineering",
+  "Cloud Transformation Leader",
+  "Application Modernization Leader",
+];
+
+export const legacyTechLogos: { key: string; label: string }[] = [
+  { key: "talend", label: "Talend" },
+  { key: "informatica", label: "Informatica" },
+  { key: "vertica", label: "Vertica" },
+  { key: "oracle", label: "Oracle" },
+  { key: "sql", label: "SQL Server" },
+  { key: "ssis", label: "SSIS" },
+  { key: "teradata", label: "Teradata" },
+];
+
+export const legacyTechLabels = ["Traditional ETL", "Stored Procedures", "Legacy SQL"];
+
+export const modernTechLogos: { key: string; label: string }[] = [
+  { key: "databricks", label: "Databricks" },
+  { key: "deltalake", label: "Delta Lake" },
+  { key: "python", label: "PySpark" },
+  { key: "sql", label: "Databricks SQL" },
+  { key: "cloudops", label: "Cloud Data Platforms" },
+];
