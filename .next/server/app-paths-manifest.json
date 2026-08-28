@@ -1,0 +1,11 @@
+{
+  "/apple-icon/route": "app/apple-icon/route.js",
+  "/icon.svg/route": "app/icon.svg/route.js",
+  "/manifest.webmanifest/route": "app/manifest.webmanifest/route.js",
+  "/page": "app/page.js",
+  "/blog/page": "app/blog/page.js",
+  "/products/karsient-revocode/page": "app/products/karsient-revocode/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/services/page": "app/services/page.js",
+  "/careers/page": "app/careers/page.js"
+}

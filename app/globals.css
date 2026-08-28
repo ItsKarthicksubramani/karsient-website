@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0b1b33;
+  background-image: radial-gradient(ellipse at top, rgba(24, 49, 96, 0.55), transparent 60%);
+  color: #ffffff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+::selection {
+  background-color: #ff6a00;
+  color: #0b0b0b;
+}
+
+.container-px {
+  @apply px-6 sm:px-10 lg:px-16;
+}
+
+.section-py {
+  @apply py-20 sm:py-28;
+}
+
+.eyebrow {
+  @apply font-mono text-xs tracking-[0.25em] uppercase text-signal;
+}
+
+.card-surface {
+  @apply relative rounded-2xl border border-white/10 bg-white/[0.03] shadow-[0_8px_30px_-12px_rgba(0,0,0,0.5)] backdrop-blur-md;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-2 rounded-full bg-signal px-6 py-3 font-body text-sm font-semibold text-ink transition-all hover:bg-signal-bright hover:shadow-[0_0_30px_rgba(255,106,0,0.35)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center gap-2 rounded-full border border-ink-line px-6 py-3 font-body text-sm font-semibold text-white transition-all hover:border-signal hover:text-signal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal;
+}
+
+.focus-ring {
+  @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal;
+}
+
+.shadow-premium {
+  box-shadow: 0 20px 60px -20px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+.glass-card {
+  @apply rounded-[24px] border border-white/10 bg-white/[0.03] backdrop-blur-xl;
+}
+
+.grid-overlay {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
