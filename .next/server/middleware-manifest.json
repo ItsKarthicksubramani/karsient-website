@@ -1,0 +1,48 @@
+{
+  "version": 3,
+  "middleware": {},
+  "functions": {
+    "/apple-icon/route": {
+      "files": [
+        "server/middleware-build-manifest.js",
+        "server/middleware-react-loadable-manifest.js",
+        "server/next-font-manifest.js",
+        "server/interception-route-rewrite-manifest.js",
+        "server/edge-runtime-webpack.js",
+        "server/app/apple-icon/route.js"
+      ],
+      "name": "app/apple-icon/route",
+      "page": "/apple-icon/route",
+      "matchers": [
+        {
+          "regexp": "^/apple\\-icon$",
+          "originalSource": "/apple-icon"
+        }
+      ],
+      "wasm": [
+        {
+          "name": "wasm_77d9faebf7af9e421806970ce10a58e9d83116d7",
+          "filePath": "server/edge-chunks/wasm_77d9faebf7af9e421806970ce10a58e9d83116d7.wasm"
+        },
+        {
+          "name": "wasm_ef4866ecae192fd87727067cf2c0c0cf9fb8b020",
+          "filePath": "server/edge-chunks/wasm_ef4866ecae192fd87727067cf2c0c0cf9fb8b020.wasm"
+        }
+      ],
+      "assets": [
+        {
+          "name": "noto-sans-v27-latin-regular.5dda3fca77107598.ttf",
+          "filePath": "server/edge-chunks/asset_noto-sans-v27-latin-regular.5dda3fca77107598.ttf"
+        }
+      ],
+      "env": {
+        "__NEXT_BUILD_ID": "development",
+        "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "2OHKv4uakzeTlbEziKAfZmejED4P75Vr0vZ3ZY1gZTA=",
+        "__NEXT_PREVIEW_MODE_ID": "fc6b6fdf039ee39f026dc51994264e7e",
+        "__NEXT_PREVIEW_MODE_SIGNING_KEY": "a102bfc0df231d171961daf54ae03028e8c5b83d8c50e9732d2821cab833d197",
+        "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "d1f967314c7b9a5a64462412f3b0ca9aef349b712e8d292a66a046a4dd41d564"
+      }
+    }
+  },
+  "sortedMiddleware": []
+}
