@@ -216,16 +216,16 @@ export function RevoCodeMockup() {
       <g transform="translate(24,50)">
         <rect width="592" height="66" rx="10" fill="#191C24" stroke="#2A2E3A" />
         {[
-          ["Maintainability", "82/100"],
-          ["Technical Debt", "-34%"],
-          ["Query Perf.", "+41%"],
-          ["Cost Savings", "$18K/mo"],
+          ["Maintainability", "Class A"],
+          ["Technical Debt", "Refactored"],
+          ["Query Plan", "Photon-Tuned"],
+          ["Compute Profile", "Optimized"],
         ].map(([label, val], i) => (
           <g key={label} transform={`translate(${20 + i * 148},14)`}>
             <text x="0" y="12" fontFamily="ui-monospace, monospace" fontSize="8.5" fill="#8B93A7">
               {label}
             </text>
-            <text x="0" y="34" fontFamily="ui-monospace, monospace" fontSize="15" fill={i === 1 ? "#28C840" : "#FF6A00"}>
+            <text x="0" y="34" fontFamily="ui-monospace, monospace" fontSize="13" fill={i === 1 ? "#28C840" : "#FF6A00"}>
               {val}
             </text>
           </g>

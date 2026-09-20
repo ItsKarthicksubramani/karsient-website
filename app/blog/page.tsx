@@ -1,116 +1,157 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Reveal } from "@/components/Reveal";
+import { SectionHeading } from "@/components/SectionHeading";
 import { NewsletterForm } from "@/components/NewsletterForm";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/blog" },
-  title: "Blog",
+  title: "Company News & Engineering Dispatches | Karsient",
   description:
-    "News, updates, and short-form posts from the Karsient team on data, AI, and cloud.",
+    "Company news, product announcements, engineering milestones, and culture updates from the Karsient team.",
 };
 
-const posts = [
+type NewsItem = {
+  tag: "Product Announcement" | "Engineering Dispatch" | "Culture & Hiring" | "Event & Community";
+  title: string;
+  date: string;
+  summary: string;
+  readTime: string;
+  badgeColor: string;
+};
+
+const newsPosts: NewsItem[] = [
   {
-    tag: "Announcement",
-    title: "Karsient expands Databricks practice with dedicated migration team",
+    tag: "Product Announcement",
+    title: "Introducing the Karsient Modernization Suite: ShiftIQ, CodeShift, RevoCode & Veriq",
+    date: "Aug 2026",
     summary:
-      "A growing number of clients are moving off legacy warehouses onto the Lakehouse. Here's how we're scaling to support it.",
-    readTime: "3 min read",
-  },
-  {
-    tag: "Culture",
-    title: "What we look for when hiring data engineers",
-    summary:
-      "Notes from inside our hiring process — the signals that matter more than a polished resume.",
+      "Announcing our purpose-built product family designed to solve legacy discovery, automated code conversion, continuous lakehouse optimization, and record-level data trust.",
     readTime: "4 min read",
+    badgeColor: "badge-saffron",
   },
   {
-    tag: "Event",
-    title: "Recap: our session on Lakehouse governance at Data Week",
+    tag: "Engineering Dispatch",
+    title: "Engineering Zero-Downtime Cutovers for Complex SQL Server ETL Estates",
+    date: "Aug 2026",
     summary:
-      "Slides, key takeaways, and the questions we got asked most from the audience.",
-    readTime: "3 min read",
-  },
-  {
-    tag: "Product",
-    title: "Behind the scenes of a 60% faster claims-fraud pipeline",
-    summary:
-      "A short walkthrough of the architecture decisions that made the biggest difference for our insurance client.",
+      "A technical walkthrough of our parallel-run methodology, automated output reconciliation, and CDC validation pipelines when decommissioning legacy stored procedures.",
     readTime: "5 min read",
+    badgeColor: "badge-cyan",
   },
   {
-    tag: "Team",
-    title: "Six months in: what our newest Databricks hires wish they'd known",
+    tag: "Culture & Hiring",
+    title: "Scaling Our Advanced Engineering Centers in Bengaluru and Chennai",
+    date: "Jul 2026",
     summary:
-      "Honest reflections from engineers who joined the team this year.",
+      "How Karsient is expanding our core engineering footprint across India, investing in specialized Lakehouse architects, distributed compute engineers, and AI practitioners.",
+    readTime: "3 min read",
+    badgeColor: "badge-saffron",
+  },
+  {
+    tag: "Event & Community",
+    title: "Key Takeaways: Modern Lakehouse Governance & Unity Catalog Best Practices",
+    date: "Jun 2026",
+    summary:
+      "Notes and architectural patterns from our recent technical session on solving multi-workspace data governance and automated lineage tracking.",
     readTime: "4 min read",
+    badgeColor: "badge-cyan",
   },
   {
-    tag: "Announcement",
-    title: "Karsient named a regional partner for Microsoft Fabric",
+    tag: "Engineering Dispatch",
+    title: "Behind the Architecture: Real-Time Ingestion for Distributed Sensor Telemetry",
+    date: "May 2026",
     summary:
-      "A quick look at what this partnership means for clients running Power BI and Fabric workloads.",
-    readTime: "2 min read",
+      "How we architected sub-second telemetry ingestion from shop-floor and fleet feeds into open Delta Lake storage formats without streaming bottlenecking.",
+    readTime: "5 min read",
+    badgeColor: "badge-saffron",
   },
 ];
 
 export default function BlogPage() {
   return (
     <>
+      {/* Blog Newsroom Hero */}
       <section className="border-b border-ink-line bg-grid-glow">
-        <div className="container-px mx-auto max-w-4xl py-24 text-center sm:py-28">
+        <div className="container-px mx-auto max-w-4xl py-20 text-center sm:py-28">
           <Reveal>
-            <p className="eyebrow">Blog</p>
+            <div className="inline-flex items-center gap-2 rounded-full border border-signal/30 bg-signal/[0.08] px-3.5 py-1">
+              <span className="font-mono text-xs uppercase tracking-[0.25em] text-signal">
+                Company Newsroom
+              </span>
+            </div>
           </Reveal>
           <Reveal delay={0.05}>
-            <h1 className="mt-4 font-display text-4xl font-semibold leading-tight text-white sm:text-5xl">
-              News, updates, and short-form posts.
+            <h1 className="mt-5 font-display text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
+              News &amp; Engineering Dispatches
             </h1>
           </Reveal>
           <Reveal delay={0.1}>
-            <p className="mt-6 font-body text-lg leading-relaxed text-mist">
-              Announcements, hiring notes, and behind-the-scenes updates from
-              the Karsient team — lighter than our Insights, updated more
-              often.
+            <p className="mt-6 font-body text-base sm:text-lg leading-relaxed text-mist max-w-2xl mx-auto">
+              Product announcements, corporate milestones, event briefs, and dispatches from our engineering floors across Bengaluru, Chennai, and Madurai.
             </p>
           </Reveal>
         </div>
       </section>
 
-      <section className="section-py container-px mx-auto max-w-7xl">
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {posts.map((post, i) => (
-            <Reveal key={post.title} delay={(i % 3) * 0.06}>
-              <article className="card-surface flex h-full flex-col p-7">
-                <span className="eyebrow">{post.tag}</span>
-                <h2 className="mt-4 font-display text-lg font-semibold leading-snug text-white">
+      {/* Editorial Timeline / Newsroom Layout */}
+      <section className="section-py container-px mx-auto max-w-5xl">
+        <SectionHeading
+          eyebrow="Company Timeline"
+          title="Recent Announcements &amp; Updates"
+          description="Stay informed on Karsient product releases and engineering updates."
+        />
+
+        <div className="mt-12 space-y-6">
+          {newsPosts.map((post, i) => (
+            <Reveal key={post.title} delay={i * 0.06}>
+              <article className="group rounded-2xl border border-ink-line/80 bg-ink-soft/30 p-7 backdrop-blur-md transition-all hover:border-signal/50 hover:bg-ink-soft/60">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 border-b border-ink-line/60 pb-3">
+                  <div className="flex items-center gap-3">
+                    <span className={post.badgeColor}>{post.tag}</span>
+                    <span className="font-mono text-xs text-mist">{post.date}</span>
+                  </div>
+                  <span className="font-mono text-xs text-mist/70">{post.readTime}</span>
+                </div>
+
+                <h3 className="mt-4 font-display text-xl font-bold text-white group-hover:text-signal transition-colors">
                   {post.title}
-                </h2>
-                <p className="mt-3 flex-1 font-body text-sm leading-relaxed text-mist">
+                </h3>
+
+                <p className="mt-2.5 font-body text-sm leading-relaxed text-mist">
                   {post.summary}
                 </p>
-                <p className="mt-5 border-t border-ink-line pt-4 font-mono text-xs text-mist">
-                  {post.readTime}
-                </p>
+
+                <div className="mt-5 flex items-center justify-between pt-3 border-t border-ink-line/40">
+                  <span className="font-mono text-xs text-signal font-semibold">
+                    Karsient Corporate Communications
+                  </span>
+                  <Link
+                    href="/contact"
+                    className="font-mono text-xs text-mist hover:text-signal transition-colors"
+                  >
+                    Inquire About Announcement &rarr;
+                  </Link>
+                </div>
               </article>
             </Reveal>
           ))}
         </div>
       </section>
 
-      <section className="section-py border-t border-ink-line bg-ink-soft/30">
+      {/* Newsletter */}
+      <section className="section-py border-t border-ink-line bg-grid-glow">
         <div className="container-px mx-auto max-w-xl text-center">
-          <Reveal>
-            <p className="eyebrow">Newsletter</p>
-          </Reveal>
-          <Reveal delay={0.05}>
-            <h2 className="mt-3 font-display text-2xl font-semibold text-white sm:text-3xl">
-              Get new posts in your inbox
-            </h2>
-          </Reveal>
-          <Reveal delay={0.1} className="mx-auto mt-6 max-w-sm">
+          <span className="eyebrow">Stay Connected</span>
+          <h2 className="mt-3 font-display text-3xl font-bold text-white sm:text-4xl">
+            Subscribe to Karsient News
+          </h2>
+          <p className="mt-3 font-body text-sm text-mist">
+            Receive major product announcements and milestone updates directly in your inbox.
+          </p>
+          <div className="mt-6">
             <NewsletterForm />
-          </Reveal>
+          </div>
         </div>
       </section>
     </>

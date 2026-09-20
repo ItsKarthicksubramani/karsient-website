@@ -1,255 +1,283 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Reveal } from "@/components/Reveal";
+import { SectionHeading } from "@/components/SectionHeading";
 import { NewsletterForm } from "@/components/NewsletterForm";
 import { insightArticles } from "@/lib/insights";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/insights" },
-  title: "Insights",
+  title: "Insights & Technical Architecture Journal | Karsient",
   description:
-    "Field notes on data engineering, Databricks, AI, and cloud platforms from the Karsient team.",
+    "Editorial technology publication from Karsient engineers covering Databricks, Lakehouse architecture, Enterprise RAG, Agentic AI, and governance.",
 };
 
-const posts = [
+type PublicationItem = {
+  slug: string;
+  category: "Databricks" | "AI" | "Data Engineering" | "Cloud" | "Governance" | "BI";
+  title: string;
+  summary: string;
+  author: string;
+  date: string;
+  readTime: string;
+  technologies: string[];
+  featured?: boolean;
+};
+
+const publications: PublicationItem[] = [
   {
-    tag: "Databricks",
-    title: "Five signs your lakehouse needs a Unity Catalog refresh",
+    slug: "medallion-architecture-layers",
+    category: "Databricks",
+    title: "Medallion Architecture: More Than Just Bronze, Silver & Gold",
     summary:
-      "Governance debt shows up quietly — through duplicated tables and access requests, not outages. Most teams notice it only after a compliance review forces the question.",
-    points: [
-      "Duplicate tables appear across workspaces with no clear owner",
-      "Access requests take days because nobody can confirm who should approve them",
-      "Lineage stops at the workspace boundary, so cross-team impact is a guess",
-      "New hires can't find the 'right' table without asking someone directly",
-    ],
+      "When organizations build a modern lakehouse, one of the most widely used patterns is Medallion Architecture. But what actually happens at the storage and transformation boundary in each layer?",
+    author: "Principal Lakehouse Architect",
+    date: "Aug 2026",
     readTime: "6 min read",
+    technologies: ["Databricks", "Delta Lake", "Unity Catalog", "PySpark"],
+    featured: true,
   },
   {
-    tag: "AI",
-    title: "Why most generative AI pilots never reach production",
+    slug: "medallion-vs-data-vault-vs-data-mesh",
+    category: "Data Engineering",
+    title: "Medallion vs. Data Vault vs. Data Mesh vs. Dimensional Modeling",
     summary:
-      "The gap between a working demo and a monitored, governed production system is usually process, not model quality. The model was rarely the blocker.",
-    points: [
-      "No agreed evaluation criteria for what 'good enough to ship' means",
-      "Monitoring is bolted on after launch instead of designed in from day one",
-      "Cost per query was never modelled against expected usage volume",
-      "No owner accountable for the system once the pilot team moves on",
-    ],
+      "A common mistake in enterprise data architecture is asking 'which architecture is better?' The better question is: which specific organizational or technical problem are we trying to solve?",
+    author: "Chief Data Architect",
+    date: "Aug 2026",
     readTime: "8 min read",
+    technologies: ["Data Vault", "dbt", "Delta Lake", "Domain Architecture"],
   },
   {
-    tag: "Data Engineering",
-    title: "Batch vs. streaming: choosing the right default",
+    slug: "agentic-ai-architecture",
+    category: "AI",
+    title: "Agentic AI Architecture: Memory, Tools, Guardrails, and Observability",
     summary:
-      "Streaming isn't always the upgrade it's marketed as. A framework for deciding when latency is actually worth the added operational complexity.",
-    points: [
-      "Start from the business decision the data feeds, not the technology preference",
-      "Most 'real-time' requirements tolerate minutes, not milliseconds, on inspection",
-      "Streaming triples on-call surface area — budget for that before committing",
-      "Micro-batch is a legitimate middle ground most teams skip too quickly",
-    ],
-    readTime: "5 min read",
-  },
-  {
-    tag: "Cloud",
-    title: "A practical checklist for cloud migration cost overruns",
-    summary:
-      "Most migration budgets fail in the same five places. We walk through each one with a concrete mitigation your team can apply before the number becomes a surprise.",
-    points: [
-      "Data egress costs are almost always modelled too optimistically",
-      "Parallel-running old and new systems runs longer than anyone plans for",
-      "Right-sizing gets deferred to 'later' and never actually happens",
-      "Reserved capacity gets bought before workload patterns are understood",
-    ],
-    readTime: "7 min read",
-  },
-  {
-    tag: "Governance",
-    title: "Data lineage is a product, not a project",
-    summary:
-      "Treating lineage as a one-time implementation is why most governance programs stall within a year of going live.",
-    points: [
-      "Lineage decays the moment a pipeline changes and nobody re-documents it",
-      "Automated lineage capture beats manual documentation every time",
-      "Ownership needs to sit with the platform team, not a one-off initiative",
-      "Lineage only earns trust once it's used to answer a real incident",
-    ],
-    readTime: "6 min read",
-  },
-  {
-    tag: "BI",
-    title: "The self-serve BI trap, and how to avoid it",
-    summary:
-      "Self-serve dashboards without a governed semantic layer just move the trust problem downstream, from the BI team to every business user.",
-    points: [
-      "Two teams computing 'revenue' differently is a modelling problem, not a BI tool problem",
-      "A governed semantic layer is what makes self-serve safe, not the dashboard tool",
-      "Dashboard sprawl is a symptom of missing semantic governance, not too much access",
-      "Certify a small set of metrics before opening up broad self-serve access",
-    ],
-    readTime: "5 min read",
-  },
-  {
-    tag: "Agentic AI",
-    title: "Agentic AI architecture: data, tools, governance, and observability",
-    summary:
-      "Most agentic AI failures aren't model failures — they're missing architecture. What it actually takes to run agents in production, not just in a demo.",
-    points: [
-      "Tool/function design matters more than the underlying model choice",
-      "Agent memory needs an explicit design, not an assumed context window",
-      "Human-in-the-loop approval gates are architecture, not an afterthought feature",
-      "Without per-action observability, you can't debug what an agent actually did",
-    ],
+      "Most agentic AI failures in the enterprise are not model failures — they are missing architectural components. Here is what it actually takes to run multi-step agents safely in production.",
+    author: "Head of AI Engineering",
+    date: "Jul 2026",
     readTime: "9 min read",
+    technologies: ["LangChain", "Vector Search", "LLM Guardrails", "Agent Memory"],
   },
   {
-    tag: "RAG",
-    title: "How to architect production RAG for enterprise knowledge",
+    slug: "production-rag-knowledge",
+    category: "AI",
+    title: "How to Architect Production RAG for Enterprise Knowledge",
     summary:
-      "RAG demos are easy. Production RAG that enterprise users trust requires solving retrieval quality, access control, and citation traceability together.",
-    points: [
-      "Chunking strategy affects retrieval quality more than embedding model choice",
-      "Hybrid retrieval (semantic + keyword) consistently outperforms semantic-only",
-      "Access control has to be enforced at retrieval time, not just at the source",
-      "Citations aren't a nice-to-have — they're what makes an answer verifiable",
-    ],
+      "RAG demos are simple; production enterprise RAG is hard. Solving hybrid semantic retrieval, access control enforcement at query time, and citation traceability.",
+    author: "AI Research Lead",
+    date: "Jul 2026",
     readTime: "8 min read",
+    technologies: ["Pinecone", "MongoDB Vector", "Hybrid Search", "Embeddings"],
   },
   {
-    tag: "Lakehouse",
-    title: "Delta Lake vs. Apache Iceberg for modern data platforms",
+    slug: "unity-catalog-governance",
+    category: "Governance",
+    title: "Five Structural Signs Your Lakehouse Needs a Unity Catalog Refresh",
     summary:
-      "Both solve the same core problem — ACID transactions on the lake — but the ecosystem fit and operational tradeoffs diverge quickly in practice.",
-    points: [
-      "Delta Lake's tightest integration is with Databricks; Iceberg is more engine-agnostic",
-      "Catalog choice (Unity Catalog vs. a REST catalog) often decides this before the table format does",
-      "Iceberg's hidden partitioning avoids a common Delta Lake partitioning mistake",
-      "Multi-engine access (Spark, Trino, Flink) is where Iceberg's format-agnostic design pays off",
-    ],
-    readTime: "7 min read",
+      "Governance debt accumulates quietly through duplicated tables, missing object owners, and ad-hoc permissions. How to establish unified access control enterprise-wide.",
+    author: "Governance Practice Lead",
+    date: "Jun 2026",
+    readTime: "6 min read",
+    technologies: ["Unity Catalog", "Lineage", "Data Contracts", "RBAC"],
   },
   {
-    tag: "AI Governance",
-    title: "AI evaluation and observability: the part most GenAI projects skip",
+    slug: "cloud-finops-checklist",
+    category: "Cloud",
+    title: "A Practical FinOps Checklist for Cloud Lakehouse Cost Containment",
     summary:
-      "Shipping an LLM feature without an evaluation framework is shipping blind. What production-grade evaluation and observability actually looks like.",
-    points: [
-      "Define 'good enough to ship' with concrete evaluation criteria before launch, not after",
-      "Offline evaluation and production monitoring answer different questions — you need both",
-      "Track cost-per-query and latency alongside quality, not as an afterthought",
-      "Regression testing on prompts and retrieval logic is as important as on code",
-    ],
+      "Most enterprise cloud migration budgets fail in the same five areas: unoptimized cluster sizing, idle workers, uncompacted files, and excessive shuffles.",
+    author: "Cloud Infrastructure Architect",
+    date: "Jun 2026",
     readTime: "7 min read",
+    technologies: ["Databricks DBU", "Azure", "AWS", "Photon", "FinOps"],
+  },
+  {
+    slug: "self-serve-bi-trap",
+    category: "BI",
+    title: "The Self-Serve BI Trap, and How Semantic Modeling Solves It",
+    summary:
+      "Opening self-serve dashboards without a governed semantic layer just moves the trust deficit downstream. Why Power BI DirectLake and centralized metrics matter.",
+    author: "Enterprise BI Lead",
+    date: "May 2026",
+    readTime: "5 min read",
+    technologies: ["Power BI", "Microsoft Fabric", "DirectLake", "DAX"],
   },
 ];
 
 export default function InsightsPage() {
+  const featured = publications.find((p) => p.featured) || publications[0];
+  const rest = publications.filter((p) => p.slug !== featured.slug);
+
+  const categories = ["All", "Databricks", "AI", "Data Engineering", "Cloud", "Governance", "BI"];
+
   return (
     <>
+      {/* Editorial Header */}
       <section className="border-b border-ink-line bg-grid-glow">
-        <div className="container-px mx-auto max-w-4xl py-24 text-center sm:py-28">
+        <div className="container-px mx-auto max-w-4xl py-20 text-center sm:py-28">
           <Reveal>
-            <p className="eyebrow">Insights</p>
+            <div className="inline-flex items-center gap-2 rounded-full border border-signal/30 bg-signal/[0.08] px-3.5 py-1">
+              <span className="font-mono text-xs uppercase tracking-[0.25em] text-signal">
+                Editorial Publication
+              </span>
+            </div>
           </Reveal>
           <Reveal delay={0.05}>
-            <h1 className="mt-4 font-display text-4xl font-semibold leading-tight text-white sm:text-5xl">
-              Field notes from the platform floor.
+            <h1 className="mt-5 font-display text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
+              Karsient Insights
             </h1>
           </Reveal>
           <Reveal delay={0.1}>
-            <p className="mt-6 font-body text-lg leading-relaxed text-mist">
-              Practical, opinionated writing on data engineering, AI, and
-              cloud platforms — from engagements, not theory.
+            <p className="mt-6 font-body text-base sm:text-lg leading-relaxed text-mist max-w-2xl mx-auto">
+              Deep architectural thought leadership, engineering post-mortems, and field notes on modern data platforms, Lakehouse design, and production AI.
             </p>
           </Reveal>
         </div>
       </section>
 
-      {/* FEATURED LONG-FORM ARTICLES */}
+      {/* Featured Insight Editorial Banner */}
       <section className="section-py container-px mx-auto max-w-7xl">
-        <p className="eyebrow text-center">Featured</p>
-        <h2 className="mt-3 text-center font-display text-2xl font-semibold text-white sm:text-3xl">
-          In-depth architecture writing
-        </h2>
-        <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-3">
-          {insightArticles.map((a, i) => (
-            <Reveal key={a.slug} delay={(i % 3) * 0.06}>
-              <Link
-                href={`/insights/${a.slug}`}
-                className="card-surface group flex h-full flex-col p-7 transition-colors hover:border-signal/50"
-              >
-                <span className="w-fit rounded-full border border-signal/30 bg-signal/[0.06] px-3.5 py-1 font-mono text-[11px] uppercase tracking-wide text-signal">
-                  {a.tag}
+        <span className="eyebrow block mb-4">Featured Architecture Briefing</span>
+        <div className="rounded-3xl border border-ink-line/80 bg-ink-soft/40 p-8 sm:p-12 backdrop-blur-xl transition-all hover:border-signal/50">
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1.3fr_1fr] lg:items-center">
+            <div>
+              <div className="flex items-center gap-3">
+                <span className="badge-saffron">{featured.category}</span>
+                <span className="font-mono text-xs text-mist">{featured.date}</span>
+                <span className="font-mono text-xs text-mist/60">&middot;</span>
+                <span className="font-mono text-xs text-mist">{featured.readTime}</span>
+              </div>
+
+              <h2 className="mt-4 font-display text-3xl sm:text-4xl font-bold text-white leading-tight">
+                {featured.title}
+              </h2>
+
+              <p className="mt-4 font-body text-sm leading-relaxed text-mist">
+                {featured.summary}
+              </p>
+
+              <div className="mt-6 flex flex-wrap items-center gap-2 border-t border-ink-line/50 pt-5">
+                <span className="font-mono text-[10px] uppercase tracking-wider text-mist mr-2">
+                  Topics:
                 </span>
-                <h3 className="mt-4 font-display text-lg font-semibold leading-snug text-white group-hover:text-signal">
-                  {a.title}
-                </h3>
-                <p className="mt-3 flex-1 font-body text-sm leading-relaxed text-mist">{a.summary}</p>
-                <div className="mt-5 flex items-center justify-between border-t border-ink-line pt-4">
-                  <span className="font-mono text-xs text-mist">{a.readTime}</span>
-                  <span className="flex items-center gap-1 font-body text-sm text-signal opacity-80 transition-opacity group-hover:opacity-100">
-                    Read article &rarr;
+                {featured.technologies.map((tech) => (
+                  <span key={tech} className="chip-tech text-[10px] py-0.5 px-2.5">
+                    {tech}
                   </span>
-                </div>
-              </Link>
-            </Reveal>
-          ))}
+                ))}
+              </div>
+
+              <div className="mt-8 flex items-center justify-between">
+                <span className="font-body text-xs text-white/80">
+                  By <strong className="text-white">{featured.author}</strong>
+                </span>
+                <Link
+                  href={`/insights/${featured.slug}`}
+                  className="btn-primary text-xs"
+                >
+                  Read Full Briefing &rarr;
+                </Link>
+              </div>
+            </div>
+
+            {/* Visual Abstract Topology */}
+            <div className="rounded-2xl border border-ink-line/70 bg-ink p-6">
+              <span className="font-mono text-xs uppercase tracking-wider text-signal block mb-3">
+                Core Architectural Thesis
+              </span>
+              <p className="font-body text-xs leading-relaxed text-white/90">
+                &ldquo;Bronze ensures reproducibility; Silver guarantees data quality and schema conformance; Gold maps directly to executive decision velocity. Designing with clear boundary contracts transforms a data lake into an enterprise asset.&rdquo;
+              </p>
+              <div className="mt-5 border-t border-ink-line/60 pt-4 flex items-center justify-between text-xs font-mono text-mist/70">
+                <span>Architecture Standard: Medallion 3.0</span>
+                <span className="text-cyan-soft">Production Tested</span>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section className="section-py container-px mx-auto max-w-7xl border-t border-ink-line">
-        <p className="eyebrow text-center">More field notes</p>
-        <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-2">
-          {posts.map((post, i) => (
-            <Reveal key={post.title} delay={(i % 2) * 0.06}>
-              <article className="card-surface flex h-full flex-col p-8">
-                <span className="w-fit rounded-full border border-signal/30 bg-signal/[0.06] px-3.5 py-1 font-mono text-[11px] uppercase tracking-wide text-signal">
-                  {post.tag}
-                </span>
-                <h2 className="mt-4 font-display text-xl font-semibold leading-snug text-white">
-                  {post.title}
-                </h2>
-                <p className="mt-3 font-body text-sm leading-relaxed text-mist">
-                  {post.summary}
-                </p>
-                <div className="mt-5 space-y-2.5 border-t border-ink-line pt-5">
-                  <p className="font-mono text-[11px] uppercase tracking-wide text-mist">Key takeaways</p>
-                  {post.points.map((point) => (
-                    <div key={point} className="flex items-start gap-2.5">
-                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-signal" />
-                      <p className="font-body text-sm leading-relaxed text-mist">{point}</p>
-                    </div>
-                  ))}
+      {/* Latest Insights Grid */}
+      <section className="section-py border-t border-ink-line bg-ink-soft/20">
+        <div className="container-px mx-auto max-w-7xl">
+          <SectionHeading
+            eyebrow="Recent Publications"
+            title="Latest Technical Briefings"
+            description="Explore our complete catalogue of architectural research and field notes."
+          />
+
+          {/* Category Topics Filter */}
+          <div className="mt-8 flex flex-wrap gap-2 border-b border-ink-line/60 pb-6">
+            {categories.map((cat) => (
+              <span
+                key={cat}
+                className="rounded-lg border border-ink-line bg-ink/70 px-3.5 py-1.5 font-mono text-xs text-mist hover:border-signal/40 hover:text-white transition-colors cursor-pointer"
+              >
+                {cat}
+              </span>
+            ))}
+          </div>
+
+          <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {rest.map((pub) => (
+              <article
+                key={pub.slug}
+                className="group card-surface flex flex-col justify-between p-7 transition-all hover:border-signal/50 hover:bg-ink-soft/70"
+              >
+                <div>
+                  <div className="flex items-center justify-between">
+                    <span className="badge-saffron text-[10px]">{pub.category}</span>
+                    <span className="font-mono text-xs text-mist/70">{pub.readTime}</span>
+                  </div>
+
+                  <h3 className="mt-4 font-display text-lg font-bold leading-snug text-white group-hover:text-signal transition-colors">
+                    <Link href={`/insights/${pub.slug}`}>{pub.title}</Link>
+                  </h3>
+
+                  <p className="mt-3 font-body text-xs leading-relaxed text-mist line-clamp-3">
+                    {pub.summary}
+                  </p>
                 </div>
-                <div className="mt-6 flex items-center justify-between border-t border-ink-line pt-4">
-                  <span className="font-mono text-xs text-mist">{post.readTime}</span>
-                  <a
-                    href="/contact"
-                    className="focus-ring flex items-center gap-1 font-body text-sm text-signal transition-opacity hover:opacity-80"
-                  >
-                    Discuss this with us &rarr;
-                  </a>
+
+                <div className="mt-6 border-t border-ink-line pt-4">
+                  <div className="flex flex-wrap gap-1.5 mb-4">
+                    {pub.technologies.slice(0, 3).map((t) => (
+                      <span key={t} className="chip-tech text-[9px] py-0.5 px-2">
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="flex items-center justify-between text-xs">
+                    <span className="font-mono text-mist/70 text-[11px]">{pub.author}</span>
+                    <Link
+                      href={`/insights/${pub.slug}`}
+                      className="font-mono text-signal hover:underline text-[11px]"
+                    >
+                      Read &rarr;
+                    </Link>
+                  </div>
                 </div>
               </article>
-            </Reveal>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
-      <section className="section-py border-t border-ink-line bg-ink-soft/30">
+      {/* Editorial Subscription */}
+      <section className="section-py border-t border-ink-line bg-grid-glow">
         <div className="container-px mx-auto max-w-xl text-center">
-          <Reveal>
-            <p className="eyebrow">Newsletter</p>
-          </Reveal>
-          <Reveal delay={0.05}>
-            <h2 className="mt-3 font-display text-2xl font-semibold text-white sm:text-3xl">
-              Get new field notes in your inbox
-            </h2>
-          </Reveal>
-          <Reveal delay={0.1} className="mx-auto mt-6 max-w-sm">
+          <span className="eyebrow">Enterprise Briefings</span>
+          <h2 className="mt-3 font-display text-3xl font-bold text-white sm:text-4xl">
+            Receive Field Notes in Your Inbox
+          </h2>
+          <p className="mt-3 font-body text-sm text-mist leading-relaxed">
+            Quarterly architectural dispatches on Databricks performance, RAG quality, and production AI engineering. Zero marketing spam.
+          </p>
+          <div className="mt-6">
             <NewsletterForm />
-          </Reveal>
+          </div>
         </div>
       </section>
     </>

@@ -520,34 +520,32 @@ export const heroStats = [
 
 export const engineeringCapability = [
   {
-    value: 10,
-    suffix: "PB+",
-    numeric: true,
-    stat: "10PB+",
-    label: "Engineered for Petabyte-Scale Data",
-    detail: "Our team's experience spans platforms built to handle petabyte-scale data, not just pilot-sized datasets.",
-  },
-  {
-    value: 10,
-    suffix: "\u00d7",
-    numeric: true,
-    stat: "10\u00d7",
-    label: "Accelerated Enterprise Modernization",
-    detail: "We design Lakehouse rollouts for rapid, iterative adoption — not multi-year big-bang migrations.",
+    numeric: false,
+    stat: "Enterprise-Scale",
+    label: "Enterprise-Scale Engineering",
+    detail: "Platforms engineered for high-concurrency enterprise workloads and governed multi-tenant throughput.",
+    badge: "Scale",
   },
   {
     numeric: false,
-    stat: "Zero-Downtime",
-    label: "Cutovers by Design",
-    detail: "Migration architecture built around zero-downtime cutovers, with rollback paths planned in from day one.",
+    stat: "Production-Ready",
+    label: "Production-Ready Architecture",
+    detail: "Zero-downtime cutover patterns with automated failover, lineage tracking, and rollback by design.",
+    badge: "Reliability",
   },
   {
-    value: 100,
-    suffix: "%",
-    numeric: true,
-    stat: "100%",
-    label: "Automated Quality Checks",
-    detail: "Data quality validation engineered to run automatically in the pipeline, not bolted on after the fact.",
+    numeric: false,
+    stat: "Governed",
+    label: "Governed Data Platforms",
+    detail: "Unified cataloging, fine-grained access policies, and automated data contracts built in from day one.",
+    badge: "Governance",
+  },
+  {
+    numeric: false,
+    stat: "Production AI",
+    label: "AI Built for Production",
+    detail: "Agentic workflows and RAG knowledge systems engineered with guardrails, evaluation, and observability.",
+    badge: "Intelligence",
   },
 ];
 
@@ -1561,7 +1559,6 @@ export const solutionsMenuLinks: NavMenuLink[] = migrationSolutions.map((s) => (
   href: `/solutions/${s.slug}`,
 }));
 
-/* Unified "Solutions" mega-menu — 4 numbered groups matching the full site hierarchy */
 export const solutionsMegaMenuColumns: NavMenuColumn[] = [
   {
     label: "Platform Migration & Modernization",
@@ -1592,6 +1589,84 @@ export const solutionsMegaMenuColumns: NavMenuColumn[] = [
   },
 ];
 
+export const headerSolutionsItems = [
+  {
+    name: "Data & AI Modernization",
+    desc: "Unify fragmented data estates into governed, AI-ready Lakehouses.",
+    href: "/services/data-engineering",
+    badge: "Lakehouse",
+  },
+  {
+    name: "Databricks",
+    desc: "Architecture, migrations, Delta Lake, Unity Catalog, and cost optimization.",
+    href: "/services/databricks-consulting",
+    badge: "Specialism",
+  },
+  {
+    name: "Microsoft Fabric",
+    desc: "Unified analytics, OneLake architecture, and Power BI semantic models.",
+    href: "/solutions/azure-databricks",
+    badge: "Cloud",
+  },
+  {
+    name: "Snowflake",
+    desc: "Governed warehouse architectures, dbt modeling, and workload modernizations.",
+    href: "/solutions/snowflake-databricks",
+    badge: "Modernization",
+  },
+  {
+    name: "Cloud Modernization",
+    desc: "Landing zones, FinOps cost reduction, and scalable cloud foundations across Azure, AWS & GCP.",
+    href: "/services#cloud-modernization",
+    badge: "Multi-Cloud",
+  },
+  {
+    name: "Legacy Modernization",
+    desc: "Assess, decouple, and transform stored procedures, ETL pipelines, and legacy systems.",
+    href: "/solutions/legacy-etl-modernization",
+    badge: "Core Focus",
+  },
+];
+
+export const headerServicesItems = [
+  {
+    name: "AI & Generative AI",
+    desc: "Enterprise copilots, production RAG, AI agents, and custom ML systems.",
+    href: "/services/ai-solutions",
+    badge: "Intelligence",
+  },
+  {
+    name: "Data Engineering",
+    desc: "Lakehouse pipelines, real-time streaming, and robust Delta Lake architectures.",
+    href: "/services/data-engineering",
+    badge: "Foundations",
+  },
+  {
+    name: "Cloud Modernization",
+    desc: "Well-architected cloud estates on Azure, AWS, and Google Cloud with FinOps tuning.",
+    href: "/services#cloud-modernization",
+    badge: "Cloud",
+  },
+  {
+    name: "Analytics & BI",
+    desc: "Enterprise semantic models, governed reporting, and high-impact executive dashboards.",
+    href: "/services#analytics-bi",
+    badge: "BI",
+  },
+  {
+    name: "Data Platforms",
+    desc: "Scalable data platforms with Unity Catalog governance and dbt transformation.",
+    href: "/services#data-platform",
+    badge: "Platform",
+  },
+  {
+    name: "Managed Services",
+    desc: "24/7 SLA-backed monitoring, cost control, and continuous platform evolution.",
+    href: "/services#managed-services",
+    badge: "Operations",
+  },
+];
+
 export const industriesMenuLinks: NavMenuLink[] = industries.map((i) => ({
   label: i.name,
   href: `/industries/${i.slug}`,
@@ -1600,6 +1675,9 @@ export const industriesMenuLinks: NavMenuLink[] = industries.map((i) => ({
 export const companyMenuLinks: NavMenuLink[] = [
   { label: "About", href: "/about" },
   { label: "Careers", href: "/careers" },
+  { label: "Case Studies", href: "/case-studies" },
+  { label: "Insights", href: "/insights" },
+  { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ];
 

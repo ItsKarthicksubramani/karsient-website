@@ -1,4 +1,39 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-  <rect width="48" height="48" rx="10" fill="#0B0B0B"/>
-  <path d="M10 10 L10 38 L15.5 38 L15.5 27 L26 38 L33.5 38 L20 24 L33 10 L25.5 10 L15.5 20 L15.5 10 Z" fill="#FF6A00"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <defs>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#0B0F19"/>
+      <stop offset="100%" stopColor="#050811"/>
+    </linearGradient>
+    <linearGradient id="k-cyan-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#38BDF8"/>
+      <stop offset="50%" stopColor="#00F2FE"/>
+      <stop offset="100%" stopColor="#0284C7"/>
+    </linearGradient>
+    <linearGradient id="k-amber-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#F59E0B"/>
+      <stop offset="50%" stopColor="#FF6B00"/>
+      <stop offset="100%" stopColor="#EA580C"/>
+    </linearGradient>
+    <linearGradient id="k-core-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stopColor="#6366F1"/>
+      <stop offset="100%" stopColor="#00F2FE"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Dark 3D Background with subtle border -->
+  <rect width="48" height="48" rx="12" fill="url(#bg-grad)"/>
+  <rect x="0.5" y="0.5" width="47" height="47" rx="11.5" stroke="rgba(255,255,255,0.15)"/>
+
+  <!-- Left Monolith with 3D Bevel -->
+  <path d="M10 8C10 6.89543 10.8954 6 12 6H16C17.1046 6 18 6.89543 18 8V40C18 41.1046 17.1046 42 16 42H12C10.8954 42 10 41.1046 10 40V8Z" fill="url(#k-cyan-grad)"/>
+  
+  <!-- Upper Right Solar Shard -->
+  <path d="M21 23L33 9C34 7.8 35.8 7.8 36.8 9L38.5 11C39.5 12.1 39.4 13.9 38.2 14.9L27 26L21 23Z" fill="url(#k-amber-grad)"/>
+  
+  <!-- Lower Right Modernization Shard -->
+  <path d="M22.5 27L35 40C36 41 37.8 40.9 38.8 39.8L40.2 38C41.2 36.9 41 35.1 39.8 34.1L28.8 23.5L22.5 27Z" fill="url(#k-core-grad)"/>
+  
+  <!-- Central Luminous Node -->
+  <circle cx="24.5" cy="24.5" r="3.5" fill="#FFFFFF"/>
+  <circle cx="24.5" cy="24.5" r="1.5" fill="#0B0F19"/>
 </svg>

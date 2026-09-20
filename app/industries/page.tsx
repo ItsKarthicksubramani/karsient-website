@@ -2,84 +2,125 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
-import { industries } from "@/lib/data";
-import { IndustryVisual } from "@/components/IndustryVisual";
+import { IndustryExplorer } from "@/components/IndustryExplorer";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/industries" },
-  title: "Industries",
+  title: "Enterprise Industries & Domain Architecture | Karsient",
   description:
-    "Karsient serves Insurance, Healthcare, Banking & Financial Services, Retail, Manufacturing, Agriculture, and Logistics organisations.",
+    "Domain-specific data engineering and AI solutions for Banking, Insurance, Healthcare, Retail, Manufacturing, Agriculture, and Logistics.",
 };
 
 export default function IndustriesPage() {
   return (
     <>
+      {/* Industries Hero */}
       <section className="border-b border-ink-line bg-grid-glow">
-        <div className="container-px mx-auto max-w-4xl py-24 text-center sm:py-28">
+        <div className="container-px mx-auto max-w-4xl py-20 text-center sm:py-28">
           <Reveal>
-            <p className="eyebrow">Industries</p>
+            <div className="inline-flex items-center gap-2 rounded-full border border-signal/30 bg-signal/[0.08] px-3.5 py-1">
+              <span className="font-mono text-xs uppercase tracking-[0.25em] text-signal">
+                Domain Architecture Depth
+              </span>
+            </div>
           </Reveal>
           <Reveal delay={0.05}>
-            <h1 className="mt-4 font-display text-4xl font-semibold leading-tight text-white sm:text-5xl">
-              Deep pattern-matching, not generic playbooks.
+            <h1 className="mt-5 font-display text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
+              Deep industry pattern-matching, not generic consulting playbooks.
             </h1>
           </Reveal>
           <Reveal delay={0.1}>
-            <p className="mt-6 font-body text-lg leading-relaxed text-mist">
-              Each industry carries its own data gravity, regulatory load,
-              and failure modes. We bring engagement history from each one to
-              every new project.
+            <p className="mt-6 font-body text-base sm:text-lg leading-relaxed text-mist max-w-2xl mx-auto">
+              Every vertical carries distinct data gravity, regulatory constraints, and failure modes. We engineer platforms specifically tailored to your industry realities.
             </p>
           </Reveal>
-        </div>
-      </section>
-
-      <section className="section-py container-px mx-auto max-w-7xl">
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {industries.map((ind, i) => (
-            <Reveal key={ind.slug} delay={(i % 3) * 0.06}>
-              <Link
-                href={`/industries/${ind.slug}`}
-                className="focus-ring group card-surface flex h-full flex-col p-7 transition-colors hover:border-signal/50"
-              >
-                <IndustryVisual slug={ind.slug} name={ind.name} />
-                <span className="eyebrow mt-5 block">{`0${i + 1}`}</span>
-                <h2 className="mt-2 font-display text-xl font-semibold text-white">
-                  {ind.name}
-                </h2>
-                <p className="mt-3 font-body text-sm leading-relaxed text-mist">
-                  {ind.description}
-                </p>
-                <ul className="mt-5 space-y-2 border-t border-ink-line pt-5">
-                  {ind.useCases.map((u) => (
-                    <li key={u} className="flex items-start gap-2 font-body text-xs text-mist">
-                      <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-signal" />
-                      {u}
-                    </li>
-                  ))}
-                </ul>
-                <span className="mt-5 flex items-center gap-1 font-body text-xs text-signal opacity-0 transition-opacity group-hover:opacity-100">
-                  See the transformation story &rarr;
-                </span>
+          <Reveal delay={0.15}>
+            <div className="mt-8 flex justify-center gap-4">
+              <Link href="/contact" className="btn-primary">
+                Discuss Your Industry Challenge &rarr;
               </Link>
-            </Reveal>
-          ))}
+            </div>
+          </Reveal>
         </div>
       </section>
 
-      <section className="section-py border-t border-ink-line bg-grid-glow">
-        <div className="container-px mx-auto max-w-3xl text-center">
+      {/* Interactive Industry Explorer */}
+      <section className="section-py container-px mx-auto max-w-7xl">
+        <SectionHeading
+          eyebrow="Sector Explorer"
+          title="Interactive Domain Intelligence"
+          description="Explore abstract domain data flows, business and data obstacles, AI opportunities, and verified client deliverables."
+        />
+
+        <div className="mt-12">
+          <IndustryExplorer />
+        </div>
+      </section>
+
+      {/* Cross-Industry Technology Standardization */}
+      <section className="section-py border-t border-ink-line bg-ink-soft/30">
+        <div className="container-px mx-auto max-w-7xl">
           <SectionHeading
-            eyebrow="Don't see your industry?"
-            title="We work beyond this list too — tell us about your data"
+            eyebrow="Platform Standards"
+            title="Consistent Enterprise Rigor Across Every Vertical"
+            description="While domain logic is customized, our engineering foundation adheres to universal production standards."
             align="center"
           />
-          <Reveal delay={0.1} className="mt-8">
+
+          <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              {
+                title: "Strict Governance & Compliance",
+                desc: "Role-based access, automated data contracts, and auditable lineage compliant with HIPAA, GDPR, and financial standards.",
+                badge: "Security",
+              },
+              {
+                title: "Zero-Downtime Cutovers",
+                desc: "Parallel-run validation and dual-write ingestion ensuring uninterrupted operational availability throughout migration.",
+                badge: "Availability",
+              },
+              {
+                title: "Sub-Second Ingestion & Inference",
+                desc: "Distributed compute tuned for event streams, real-time fraud scoring, and immediate telemetry aggregation.",
+                badge: "Performance",
+              },
+              {
+                title: "Disciplined FinOps Control",
+                desc: "Right-sized clusters, serverless SQL compute, and automated storage compaction preventing runaway cloud spend.",
+                badge: "FinOps",
+              },
+            ].map((pillar) => (
+              <div
+                key={pillar.title}
+                className="rounded-2xl border border-ink-line/70 bg-ink p-6 backdrop-blur-md"
+              >
+                <span className="badge-saffron">{pillar.badge}</span>
+                <h4 className="mt-3 font-display text-base font-bold text-white">
+                  {pillar.title}
+                </h4>
+                <p className="mt-2 font-body text-xs text-mist leading-relaxed">
+                  {pillar.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="section-py border-t border-ink-line bg-grid-glow">
+        <div className="container-px mx-auto max-w-3xl text-center">
+          <h2 className="font-display text-3xl font-bold text-white sm:text-4xl">
+            Don&apos;t see your specific industry listed?
+          </h2>
+          <p className="mt-4 font-body text-base text-mist">
+            Our data platform and production AI architectures extend across energy, telecommunications, pharmaceuticals, and public infrastructure.
+          </p>
+          <div className="mt-8">
             <Link href="/contact" className="btn-primary">
-              Talk to a Karsient Expert
+              Consult an Industry Principal &rarr;
             </Link>
-          </Reveal>
+          </div>
         </div>
       </section>
     </>

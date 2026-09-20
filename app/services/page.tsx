@@ -2,113 +2,96 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
-import { services, serviceGroups, migrationSolutions } from "@/lib/data";
-import { TechIcon } from "@/components/icons/TechIcons";
+import { serviceGroups, migrationSolutions } from "@/lib/data";
+import { ServicesEditorialMatrix } from "@/components/ServicesEditorialMatrix";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/services" },
-  title: "Services",
+  title: "Enterprise Services & Capabilities | Karsient",
   description:
-    "AI & generative AI, data engineering, cloud modernization, analytics & BI, data platform, and managed services for enterprise teams.",
+    "AI & Generative AI, Data Engineering, Cloud Modernization, Analytics & BI, Data Platform, and Managed Services for modern enterprises.",
 };
 
 export default function ServicesPage() {
   return (
     <>
+      {/* Services Hero */}
       <section className="border-b border-ink-line bg-grid-glow">
-        <div className="container-px mx-auto max-w-4xl py-24 text-center sm:py-28">
+        <div className="container-px mx-auto max-w-4xl py-20 text-center sm:py-28">
           <Reveal>
-            <p className="eyebrow">Services</p>
+            <div className="inline-flex items-center gap-2 rounded-full border border-signal/30 bg-signal/[0.08] px-3.5 py-1">
+              <span className="font-mono text-xs uppercase tracking-[0.25em] text-signal">
+                Engineering Capabilities
+              </span>
+            </div>
           </Reveal>
           <Reveal delay={0.05}>
-            <h1 className="mt-4 font-display text-4xl font-semibold leading-tight text-white sm:text-5xl">
-              Every capability between raw data and production AI.
+            <h1 className="mt-5 font-display text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
+              From raw enterprise data to governed, production AI.
             </h1>
           </Reveal>
           <Reveal delay={0.1}>
-            <p className="mt-6 font-body text-lg leading-relaxed text-mist">
-              Engage us for a single specialism or the full lifecycle — our
-              teams are structured to plug into wherever your platform is
-              today.
+            <p className="mt-6 font-body text-base sm:text-lg leading-relaxed text-mist max-w-2xl mx-auto">
+              Engage Karsient for a targeted architecture review, a complete platform migration, or an end-to-end production AI deployment.
             </p>
+          </Reveal>
+          <Reveal delay={0.15}>
+            <div className="mt-8 flex flex-wrap justify-center gap-4">
+              <Link href="/contact" className="btn-primary">
+                Talk to a Karsient Expert &rarr;
+              </Link>
+              <Link href="/products" className="btn-secondary">
+                Explore Our Products
+              </Link>
+            </div>
           </Reveal>
         </div>
       </section>
 
+      {/* Main Editorial Services Matrix */}
       <section className="section-py container-px mx-auto max-w-7xl">
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((service, i) => (
-            <div key={service.slug} id={service.slug} className="scroll-mt-28">
-              <Reveal
-                delay={(i % 3) * 0.06}
-                className="group/card relative h-full overflow-hidden rounded-[24px] border border-white/10 bg-white/[0.03] p-7 backdrop-blur-xl transition-all duration-500 hover:border-signal/50 hover:bg-white/[0.05] hover:shadow-[0_0_45px_-8px_rgba(255,106,0,0.16)]"
-              >
-                <div className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-signal/0 blur-3xl transition-all duration-500 group-hover/card:bg-signal/20" />
-                <div className="relative flex items-center gap-3">
-                  {service.logos.map((logoKey) => (
-                    <div
-                      key={logoKey}
-                      className="flex h-14 w-14 items-center justify-center rounded-2xl border border-signal/25 bg-gradient-to-br from-signal/35 via-signal-dim/25 to-ink/40 p-2.5 shadow-inner transition-transform duration-500 group-hover/card:scale-105"
-                    >
-                      <TechIcon name={logoKey} className="h-full w-full" />
-                    </div>
-                  ))}
-                </div>
-                <h2 className="relative mt-6 font-display text-xl font-semibold text-white">
-                  {service.name}
-                </h2>
-                <p className="relative mt-3 font-body text-sm leading-relaxed text-mist">
-                  {service.description}
-                </p>
-                <div className="relative mt-5 flex flex-wrap gap-2">
-                  {service.tech.map((t) => (
-                    <span
-                      key={t}
-                      className="rounded-full border border-signal/25 bg-signal/[0.08] px-3 py-1 font-mono text-[11px] uppercase tracking-wide text-signal-bright"
-                    >
-                      {t}
-                    </span>
-                  ))}
-                </div>
-                <ul className="relative mt-5 space-y-2 border-t border-ink-line pt-5">
-                  {service.capabilities.map((c) => (
-                    <li key={c} className="flex items-start gap-2 font-body text-xs text-mist">
-                      <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-signal" />
-                      {c}
-                    </li>
-                  ))}
-                </ul>
-              </Reveal>
-            </div>
-          ))}
+        <SectionHeading
+          eyebrow="Core Practices"
+          title="Enterprise Engineering Matrix"
+          description="Select any capability below to inspect technology stacks, architectural blueprints, and verified business outcomes."
+        />
+
+        <div className="mt-12">
+          <ServicesEditorialMatrix />
         </div>
       </section>
 
+      {/* Deep-Dive Specialisms */}
       <section className="section-py border-t border-ink-line bg-ink-soft/30">
         <div className="container-px mx-auto max-w-7xl">
           <SectionHeading
-            eyebrow="Specialisms"
-            title="Go deeper on AI, MLOps, and Databricks"
-            description="These are dedicated practices with their own delivery teams — explore each to see what's inside."
+            eyebrow="Dedicated Practices"
+            title="Specialized Engineering Centers"
+            description="Dedicated practices with certified delivery teams and established production accelerators."
           />
-          <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-3">
+          <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-3">
             {serviceGroups.map((group, i) => (
-              <Reveal key={group.slug} delay={i * 0.06}>
+              <Reveal key={group.slug} delay={i * 0.08}>
                 <Link
                   href={`/services/${group.slug}`}
-                  className="focus-ring group card-surface flex h-full flex-col p-7 transition-colors hover:border-signal/50"
+                  className="group card-surface flex h-full flex-col p-8 transition-all hover:border-signal/50 hover:bg-ink-soft/70"
                 >
-                  <h3 className="font-display text-lg font-semibold text-white">{group.name}</h3>
-                  <p className="mt-2 flex-1 font-body text-sm leading-relaxed text-mist">{group.tagline}</p>
-                  <ul className="mt-4 space-y-1.5 border-t border-ink-line pt-4">
+                  <span className="badge-saffron self-start">{group.eyebrow}</span>
+                  <h3 className="mt-4 font-display text-xl font-bold text-white group-hover:text-signal transition-colors">
+                    {group.name}
+                  </h3>
+                  <p className="mt-2 flex-1 font-body text-xs leading-relaxed text-mist">
+                    {group.tagline}
+                  </p>
+                  <ul className="mt-5 space-y-2 border-t border-ink-line pt-5">
                     {group.items.slice(0, 4).map((item) => (
-                      <li key={item.slug} className="flex items-start gap-2 font-body text-xs text-mist">
+                      <li key={item.slug} className="flex items-start gap-2 font-body text-xs text-white/80">
                         <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-signal" />
                         {item.name}
                       </li>
                     ))}
                   </ul>
-                  <span className="mt-5 flex items-center gap-1 font-body text-sm text-signal opacity-80 transition-opacity group-hover:opacity-100">
+                  <span className="mt-6 flex items-center gap-1.5 font-mono text-xs text-signal">
                     Explore {group.name} &rarr;
                   </span>
                 </Link>
@@ -118,37 +101,46 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* Migration Solutions Grid */}
       <section className="section-py container-px mx-auto max-w-7xl">
         <SectionHeading
-          eyebrow="Solutions"
-          title="Platform-specific migration & deployment"
-          description="Moving from a specific platform, or standing Databricks up on a specific cloud? Here's exactly how we approach it."
+          eyebrow="Platform Modernization"
+          title="Targeted Migration Blueprints"
+          description="Proven, zero-downtime migration paths from legacy data warehouses and ETL tools onto modern lakehouse platforms."
         />
-        <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+        <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
           {migrationSolutions.map((s, i) => (
             <Reveal key={s.slug} delay={(i % 5) * 0.05}>
               <Link
                 href={`/solutions/${s.slug}`}
-                className="focus-ring group flex h-full flex-col rounded-xl border border-ink-line bg-ink p-4 transition-colors hover:border-signal/50"
+                className="group flex h-full flex-col rounded-xl border border-ink-line/70 bg-ink p-4 transition-all hover:border-signal/50 hover:bg-ink-soft/50"
               >
-                <span className="font-body text-sm font-medium text-white">{s.name}</span>
-                <span className="mt-2 flex-1 font-body text-xs leading-relaxed text-mist">{s.short}</span>
+                <span className="font-display text-sm font-semibold text-white group-hover:text-signal transition-colors">
+                  {s.name}
+                </span>
+                <span className="mt-2 flex-1 font-body text-xs leading-relaxed text-mist">
+                  {s.short}
+                </span>
+                <span className="mt-3 font-mono text-[11px] text-signal/80 group-hover:text-signal">
+                  Migration Blueprint &rarr;
+                </span>
               </Link>
             </Reveal>
           ))}
         </div>
       </section>
 
+      {/* CTA Footer */}
       <section className="section-py border-t border-ink-line bg-grid-glow">
         <div className="container-px mx-auto max-w-3xl text-center">
           <SectionHeading
-            eyebrow="Not sure where to start?"
-            title="Tell us what's broken, and we'll tell you what to fix first"
+            eyebrow="Start The Conversation"
+            title="Discuss your architecture challenge with our engineering leads"
             align="center"
           />
           <Reveal delay={0.1} className="mt-8">
             <Link href="/contact" className="btn-primary">
-              Talk to a Karsient Expert
+              Talk to a Karsient Expert &rarr;
             </Link>
           </Reveal>
         </div>

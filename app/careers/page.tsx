@@ -1,108 +1,124 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
 import { site } from "@/lib/data";
+import { CareersJobFilter } from "@/components/CareersJobFilter";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/careers" },
-  title: "Careers",
+  title: "Careers & Engineering Culture | Karsient",
   description:
-    "Open roles at Karsient — join a team of data engineers, AI practitioners, and cloud architects working with enterprise clients.",
+    "Join an engineering-first technology company. Build governed data platforms, production AI systems, and cloud modernization software for global enterprises.",
 };
-
-const openRoles = [
-  { title: "Senior Data Engineer", location: "Madurai / Remote", type: "Full-time" },
-  { title: "Databricks Solutions Architect", location: "Madurai / Remote", type: "Full-time" },
-  { title: "Machine Learning Engineer", location: "Madurai / Remote", type: "Full-time" },
-  { title: "Cloud Platform Consultant", location: "Remote", type: "Contract" },
-  { title: "BI & Analytics Consultant", location: "Madurai / Remote", type: "Full-time" },
-];
-
-const perks = [
-  { title: "Real client ownership", detail: "Work directly with enterprise clients from week one, not behind three layers of account management." },
-  { title: "Modern stack, always", detail: "We invest in current tooling — Databricks, modern orchestration, and current LLM tooling." },
-  { title: "Remote-friendly", detail: "Most roles support remote or hybrid work with our Madurai office as the hub." },
-  { title: "Growth budget", detail: "Certifications, conferences, and courses supported for every engineer." },
-];
 
 export default function CareersPage() {
   return (
     <>
+      {/* Hero */}
       <section className="border-b border-ink-line bg-grid-glow">
-        <div className="container-px mx-auto max-w-4xl py-24 text-center sm:py-28">
+        <div className="container-px mx-auto max-w-4xl py-20 text-center sm:py-28">
           <Reveal>
-            <p className="eyebrow">Careers</p>
+            <div className="inline-flex items-center gap-2 rounded-full border border-signal/30 bg-signal/[0.08] px-3.5 py-1">
+              <span className="font-mono text-xs uppercase tracking-[0.25em] text-signal">
+                Engineering Culture
+              </span>
+            </div>
           </Reveal>
           <Reveal delay={0.05}>
-            <h1 className="mt-4 font-display text-4xl font-semibold leading-tight text-white sm:text-5xl">
+            <h1 className="mt-5 font-display text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
               Build the platforms enterprises run on.
             </h1>
           </Reveal>
           <Reveal delay={0.1}>
-            <p className="mt-6 font-body text-lg leading-relaxed text-mist">
-              We&apos;re a small, technical team that would rather ship than
-              present. If that sounds like your kind of consulting, we&apos;d like
-              to talk.
+            <p className="mt-6 font-body text-base sm:text-lg leading-relaxed text-mist max-w-2xl mx-auto">
+              We are an engineering-driven company that prioritizes shipping production code over PowerPoint slides. If you take pride in distributed systems, lakehouse architectures, and production AI, you belong here.
             </p>
           </Reveal>
         </div>
       </section>
 
-      <section className="section-py border-b border-ink-line bg-ink-soft/30">
+      {/* Engineering Culture & Values */}
+      <section className="section-py container-px mx-auto max-w-7xl">
+        <SectionHeading
+          eyebrow="Why Karsient"
+          title="What It Means to Build Here"
+          description="A culture designed by engineers, for engineers who want autonomy, modern tooling, and meaningful technical ownership."
+          align="center"
+        />
+
+        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            {
+              title: "Direct Client Ownership",
+              desc: "Collaborate directly with enterprise CTOs and architects. No bureaucratic layers between you and production decisions.",
+              badge: "Autonomy",
+            },
+            {
+              title: "Modern Tech Stacks Only",
+              desc: "We write modern Spark, Databricks, Python, Delta Lake, LangChain, and dbt. We don't maintain stagnant legacy code without modernizing it.",
+              badge: "Modern Stack",
+            },
+            {
+              title: "Continuous Learning",
+              desc: "Dedicated annual budget for Databricks certifications, cloud architecture credentials, research papers, and technical conferences.",
+              badge: "Mastery",
+            },
+            {
+              title: "Remote & Hybrid Flexibility",
+              desc: "Work remotely across India or collaborate in person at our Bengaluru, Chennai, or Madurai engineering centers.",
+              badge: "Flexibility",
+            },
+          ].map((pillar, i) => (
+            <Reveal key={pillar.title} delay={i * 0.08}>
+              <div className="group card-surface flex h-full flex-col p-7 transition-all hover:border-signal/50 hover:bg-ink-soft/70">
+                <span className="badge-saffron self-start">{pillar.badge}</span>
+                <h3 className="mt-4 font-display text-lg font-bold text-white group-hover:text-signal transition-colors">
+                  {pillar.title}
+                </h3>
+                <p className="mt-2 font-body text-xs leading-relaxed text-mist">
+                  {pillar.desc}
+                </p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      {/* Searchable & Filterable Job Roles */}
+      <section className="section-py border-t border-ink-line bg-ink-soft/20">
         <div className="container-px mx-auto max-w-7xl">
-          <SectionHeading eyebrow="Why Karsient" title="What it's like on the team" />
-          <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2">
-            {perks.map((p, i) => (
-              <Reveal key={p.title} delay={i * 0.06}>
-                <div className="card-surface h-full p-7">
-                  <h3 className="font-display text-lg font-semibold text-white">
-                    {p.title}
-                  </h3>
-                  <p className="mt-2 font-body text-sm leading-relaxed text-mist">
-                    {p.detail}
-                  </p>
-                </div>
-              </Reveal>
-            ))}
+          <SectionHeading
+            eyebrow="Open Roles"
+            title="Current Engineering Positions"
+            description="Filter by practice area, technology stack, or location to find your next engineering challenge."
+          />
+
+          <div className="mt-10">
+            <CareersJobFilter />
           </div>
         </div>
       </section>
 
-      <section className="section-py container-px mx-auto max-w-7xl">
-        <SectionHeading eyebrow="Open roles" title="Current opportunities" />
-        <div className="mt-10 divide-y divide-ink-line border-y border-ink-line">
-          {openRoles.map((role, i) => (
-            <Reveal key={role.title} delay={i * 0.05}>
-              <a
-                href={`mailto:${site.email}?subject=${encodeURIComponent(
-                  `Application: ${role.title}`
-                )}`}
-                className="focus-ring group flex flex-col gap-2 py-6 sm:flex-row sm:items-center sm:justify-between"
-              >
-                <div>
-                  <h3 className="font-display text-lg font-semibold text-white">
-                    {role.title}
-                  </h3>
-                  <p className="mt-1 font-body text-sm text-mist">
-                    {role.location} &middot; {role.type}
-                  </p>
-                </div>
-                <span className="font-body text-sm font-medium text-signal opacity-80 transition-opacity group-hover:opacity-100">
-                  Apply via email &rarr;
-                </span>
-              </a>
-            </Reveal>
-          ))}
-        </div>
-        <Reveal delay={0.1}>
-          <p className="mt-8 font-body text-sm text-mist">
-            Don&apos;t see a fit? Send your resume and a short note to{" "}
-            <a href={`mailto:${site.email}`} className="focus-ring rounded-md text-signal">
-              {site.email}
-            </a>{" "}
-            — we keep strong applications on file for future openings.
+      {/* Open Application Banner */}
+      <section className="section-py border-t border-ink-line bg-grid-glow">
+        <div className="container-px mx-auto max-w-3xl text-center">
+          <span className="eyebrow">General Applications</span>
+          <h2 className="mt-3 font-display text-3xl font-bold text-white sm:text-4xl">
+            Don&apos;t see your exact role listed?
+          </h2>
+          <p className="mt-4 font-body text-base text-mist leading-relaxed">
+            We are always looking for exceptional data platform architects, distributed systems programmers, and machine learning researchers.
           </p>
-        </Reveal>
+          <div className="mt-8">
+            <a
+              href={`mailto:${site.email}?subject=${encodeURIComponent("General Engineering Application / Resume")}`}
+              className="btn-primary"
+            >
+              Send Resume &amp; Github / Portfolio &rarr;
+            </a>
+          </div>
+        </div>
       </section>
     </>
   );

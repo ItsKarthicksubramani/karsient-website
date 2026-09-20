@@ -2,23 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ============================================================
+   KARSIENT AI OS — Premium SaaS Design System
+   Inspired by finseo.ai & authenticom.com aesthetics
+   ============================================================ */
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  background-color: #0b1b33;
-  background-image: radial-gradient(ellipse at top, rgba(24, 49, 96, 0.55), transparent 60%);
+  background-color: #07090E;
   color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+/* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-  *,
-  *::before,
-  *::after {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
@@ -26,49 +29,205 @@ body {
   }
 }
 
+/* Text selection */
 ::selection {
   background-color: #ff6a00;
-  color: #0b0b0b;
+  color: #000000;
 }
 
+/* ============================================================
+   SPACING UTILITIES
+   ============================================================ */
 .container-px {
-  @apply px-6 sm:px-10 lg:px-16;
+  @apply px-5 sm:px-8 lg:px-12 xl:px-16;
 }
 
 .section-py {
   @apply py-20 sm:py-28;
 }
 
+/* ============================================================
+   TYPOGRAPHY COMPONENTS
+   ============================================================ */
 .eyebrow {
   @apply font-mono text-xs tracking-[0.25em] uppercase text-signal;
 }
 
+/* ============================================================
+   CARD SURFACES
+   ============================================================ */
 .card-surface {
-  @apply relative rounded-2xl border border-white/10 bg-white/[0.03] shadow-[0_8px_30px_-12px_rgba(0,0,0,0.5)] backdrop-blur-md;
+  @apply relative rounded-2xl border border-white/10 bg-white/[0.03] 
+         shadow-[0_8px_30px_-12px_rgba(0,0,0,0.5)] backdrop-blur-md;
 }
 
-.btn-primary {
-  @apply inline-flex items-center justify-center gap-2 rounded-full bg-signal px-6 py-3 font-body text-sm font-semibold text-ink transition-all hover:bg-signal-bright hover:shadow-[0_0_30px_rgba(255,106,0,0.35)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal;
-}
-
-.btn-secondary {
-  @apply inline-flex items-center justify-center gap-2 rounded-full border border-ink-line px-6 py-3 font-body text-sm font-semibold text-white transition-all hover:border-signal hover:text-signal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal;
-}
-
-.focus-ring {
-  @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal;
-}
-
-.shadow-premium {
-  box-shadow: 0 20px 60px -20px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.04);
+.card-enterprise {
+  @apply relative rounded-2xl border border-white/10 bg-[#0B0F19]/60
+         shadow-[0_8px_30px_-12px_rgba(0,0,0,0.5)] backdrop-blur-md 
+         transition-all duration-300 hover:border-signal/40 hover:bg-[#0F1520]/80;
 }
 
 .glass-card {
-  @apply rounded-[24px] border border-white/10 bg-white/[0.03] backdrop-blur-xl;
+  @apply rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-xl;
 }
 
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl 
+         bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600
+         px-6 py-3 font-body text-sm font-bold text-white
+         shadow-[0_0_24px_rgba(255,107,0,0.35)]
+         transition-all duration-300 
+         hover:shadow-[0_0_40px_rgba(255,107,0,0.55)] hover:scale-[1.02]
+         active:scale-[0.98]
+         focus-visible:outline focus-visible:outline-2 
+         focus-visible:outline-offset-2 focus-visible:outline-amber-400;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl 
+         border border-white/20 bg-white/[0.05] px-6 py-3
+         font-body text-sm font-semibold text-white backdrop-blur-md
+         transition-all duration-200 
+         hover:bg-white/[0.10] hover:border-cyan-400/50
+         focus-visible:outline focus-visible:outline-2 
+         focus-visible:outline-offset-2 focus-visible:outline-cyan-400;
+}
+
+.focus-ring {
+  @apply focus-visible:outline focus-visible:outline-2 
+         focus-visible:outline-offset-2 focus-visible:outline-cyan-400;
+}
+
+/* ============================================================
+   BADGES & CHIPS
+   ============================================================ */
+.badge-saffron {
+  @apply inline-flex items-center gap-1 rounded-md border border-amber-500/30 
+         bg-amber-500/10 px-2.5 py-0.5 font-mono text-[10px] font-semibold 
+         uppercase tracking-wider text-amber-300;
+}
+
+.badge-cyan {
+  @apply inline-flex items-center gap-1 rounded-md border border-cyan-500/30 
+         bg-cyan-500/10 px-2.5 py-0.5 font-mono text-[10px] font-semibold 
+         uppercase tracking-wider text-cyan-300;
+}
+
+.chip-tech {
+  @apply inline-flex items-center gap-1.5 rounded-full border border-white/15 
+         bg-white/[0.04] px-3 py-1 font-mono text-[11px] uppercase tracking-wide 
+         text-slate-300 transition-colors hover:border-cyan-500/40 hover:text-white;
+}
+
+/* ============================================================
+   BACKGROUND PATTERNS
+   ============================================================ */
 .grid-overlay {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
-  background-size: 56px 56px;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.bg-grid-glow {
+  background: 
+    radial-gradient(ellipse at 20% 20%, rgba(255,107,0,0.12), transparent 50%),
+    radial-gradient(ellipse at 80% 10%, rgba(0,242,254,0.08), transparent 45%),
+    #07090E;
+}
+
+/* ============================================================
+   3D DEPTH SHADOWS & GLOW UTILITIES
+   ============================================================ */
+.shadow-premium {
+  box-shadow: 
+    0 25px 80px -20px rgba(0, 0, 0, 0.75), 
+    0 0 0 1px rgba(255, 255, 255, 0.05),
+    0 0 40px rgba(0, 242, 254, 0.08);
+}
+
+.glow-saffron {
+  box-shadow: 0 0 50px -10px rgba(255, 107, 0, 0.35);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 50px -10px rgba(0, 242, 254, 0.3);
+}
+
+.glow-emerald {
+  box-shadow: 0 0 50px -10px rgba(16, 185, 129, 0.25);
+}
+
+/* Premium 3D border glow for featured cards */
+.border-glow-cyan {
+  box-shadow: 0 0 0 1px rgba(0, 242, 254, 0.3), 
+              0 0 30px rgba(0, 242, 254, 0.1),
+              inset 0 1px 0 rgba(255,255,255,0.15);
+}
+
+/* ============================================================
+   ANIMATED GRADIENT TEXT
+   ============================================================ */
+.text-gradient-primary {
+  background: linear-gradient(135deg, #38BDF8 0%, #E0F2FE 50%, #F59E0B 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-saffron {
+  background: linear-gradient(135deg, #F59E0B 0%, #FF6B00 50%, #EA580C 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ============================================================
+   CODE BLOCKS (SaaS Studio Terminal style)
+   ============================================================ */
+.code-block {
+  @apply rounded-xl border border-white/10 bg-black/70 p-4 
+         font-mono text-xs leading-relaxed text-slate-200;
+}
+
+/* ============================================================
+   SCROLLBAR STYLING (Finseo-inspired minimal)
+   ============================================================ */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #07090E;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 242, 254, 0.35);
+}
+
+/* ============================================================
+   RANGE INPUT ACCENT COLORS
+   ============================================================ */
+input[type="range"] {
+  @apply cursor-pointer;
+}
+input[type="range"]:focus {
+  outline: none;
+}
+
+/* ============================================================
+   PREMIUM HOVER LIFT EFFECT FOR CARDS
+   ============================================================ */
+.hover-lift {
+  @apply transition-all duration-300;
+}
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 25px 60px -15px rgba(0,0,0,0.6), 0 0 20px rgba(0,242,254,0.1);
 }
