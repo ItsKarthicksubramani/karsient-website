@@ -59,7 +59,7 @@ export function TechnologyEcosystemStrip() {
                   <TechIcon name={item.key} className="h-full w-full object-contain" />
                 </div>
                 <div className="min-w-0">
-                  <p className="truncate font-display text-sm font-bold text-white group-hover:text-[#FF7A00]">{item.name}</p>
+                  <p className="font-display text-sm font-bold text-white leading-tight break-words group-hover:text-[#FF7A00]">{item.name}</p>
                   <p className="mt-0.5 truncate font-mono text-[10px] text-slate-300">{item.role}</p>
                 </div>
               </div>
