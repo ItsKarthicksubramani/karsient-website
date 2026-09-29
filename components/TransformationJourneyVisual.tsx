@@ -257,7 +257,7 @@ export function TransformationJourneyVisual() {
               </span>
               <span className="font-display text-sm font-semibold text-signal mt-0.5 block">
                 {selectedIdx < stages.length - 1
-                  ? `${stages[selectedIdx + 1].step} Â· ${stages[selectedIdx + 1].title}`
+                  ? `${stages[selectedIdx + 1].step} · ${stages[selectedIdx + 1].title}`
                   : "Continuous Modernization Cycle"}
               </span>
             </div>
@@ -267,6 +267,7 @@ export function TransformationJourneyVisual() {
     </div>
   );
 }
+
 
 
 
