@@ -19,7 +19,7 @@ interface ProductTab {
 const PRODUCT_TABS: ProductTab[] = [
   {
     id: "shiftiq",
-    name: "ShiftIQâ„¢",
+    name: "ShiftIQ™",
     tagline: "Autonomous Architecture Discovery & Topology Mapping",
     badge: "STAGE 01 DISCOVERY",
     accentColor: "#38BDF8", // Cyan
@@ -46,7 +46,7 @@ MIGRATION_EFFORT: -74% vs Manual Architecting`,
   },
   {
     id: "codeshift",
-    name: "CodeShiftâ„¢",
+    name: "CodeShift™",
     tagline: "Autonomous Legacy-to-Modern Code Transpilation Engine",
     badge: "STAGE 02 TRANSFORMATION",
     accentColor: "#FF6B00", // Saffron / Orange
@@ -84,7 +84,7 @@ ledger_df.write.format("delta").mode("append").saveAsTable("lakehouse.gold.month
   },
   {
     id: "revocode",
-    name: "RevoCodeâ„¢",
+    name: "RevoCode™",
     tagline: "AI-Powered Microservices Refactoring & Test Automation",
     badge: "STAGE 03 EVOLUTION",
     accentColor: "#A855F7", // Purple / Violet
@@ -119,7 +119,7 @@ public class OrderEventConsumer {
   },
   {
     id: "veriq",
-    name: "Veriqâ„¢",
+    name: "Veriq™",
     tagline: "Continuous Autonomous Data Quality & Governance Agent",
     badge: "STAGE 04 GOVERNANCE",
     accentColor: "#10B981", // Emerald
@@ -463,5 +463,6 @@ export function SaaSPlatformHero() {
     </section>
   );
 }
+
 
 
