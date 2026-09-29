@@ -1,0 +1,36 @@
+# Karsient — Enterprise Cloud Modernization & AI OS
+
+> Engineering tomorrow's intelligent enterprises.
+
+Karsient is an enterprise AI & Data Modernization SaaS platform and engineering company. Karsient helps global enterprises modernize legacy data warehouses and ETL estates, build governed Lakehouse platforms on Databricks, Snowflake, and Microsoft Fabric, and deploy production AI systems with zero data exfiltration.
+
+## Core Products
+- **Karsient ShiftIQ™**: AI-powered legacy architecture discovery, topology mapping, and dependency AST analysis.
+- **Karsient CodeShift™**: Autonomous legacy code transpilation engine converting Teradata, Oracle PL/SQL, Netezza, and Talend into idiomatic Databricks PySpark and Delta Lake pipelines.
+- **Karsient RevoCode™**: Continuous microservices refactoring, query optimization, and test automation engine.
+- **Karsient Veriq™**: Continuous autonomous data quality, column-level lineage tracking, and schema drift governance.
+
+## Engineering Practices
+- **Data Engineering**: High-throughput Lakehouse pipelines, Delta Lake, Apache Spark, and real-time Kafka streaming.
+- **Databricks Specialism**: Unity Catalog governance, performance tuning, and FinOps DBU optimization.
+- **Legacy Modernization**: Zero-loss migration paths from Teradata, Oracle Exadata, IBM Netezza, and SQL Server.
+- **Enterprise BI & Analytics**: Microsoft Fabric, certified Power BI semantic layers, and operational executive telemetry.
+- **Production AI & Agentic Systems**: Citation-grounded RAG, multi-agent orchestration, and LLM guardrails.
+
+## Deployment Options
+- **Multi-Tenant SaaS**: Managed cloud platform with tenant-isolated compute.
+- **Customer VPC / VNet**: Deployed directly inside customer's Azure, AWS, or GCP perimeter with zero data exfiltration.
+- **Air-Gapped Kubernetes**: Fully sovereign, self-contained deployment for high-compliance environments.
+
+## Compliance & Security
+- SOC2 Type II and HIPAA compliant architectures.
+- Hosted on ISO 27001 certified cloud infrastructure.
+- Zero data exfiltration guarantee — code and data remain inside customer security perimeters.
+
+## Canonical URLs
+- Website: https://www.karsient.com
+- Products: https://www.karsient.com/products
+- Solutions: https://www.karsient.com/solutions
+- Services: https://www.karsient.com/services
+- Industries: https://www.karsient.com/industries
+- Contact: https://www.karsient.com/contact
